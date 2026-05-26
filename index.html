@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,4 +10,4006 @@
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+	<html lang="ru">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>АССОИУ — Портал колледжа</title>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+			rel="stylesheet">
+		<style>
+			*,
+			*::before,
+			*::after {
+				box-sizing: border-box;
+				margin: 0;
+				padding: 0
+			}
+
+			:root {
+				--bg: #f2f0ea;
+				--surface: #fdfcf8;
+				--surface2: #eceae3;
+				--surface3: #e4e1d8;
+				--accent: #1a3a5c;
+				--accent2: #2563a8;
+				--accent-light: #e8eef6;
+				--green: #1a6b3a;
+				--green-bg: #e8f4ee;
+				--gold: #8b6914;
+				--gold-bg: #fdf6e3;
+				--purple: #5b21b6;
+				--purple-bg: #f0ebff;
+				--coral: #b83232;
+				--coral-bg: #fdf0f0;
+				--text: #111827;
+				--text2: #4b5563;
+				--text3: #9ca3af;
+				--border: #ddd9ce;
+				--border2: #e8e4da;
+				--shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
+				--shadow-sm: 0 1px 6px rgba(0, 0, 0, 0.05);
+				--r: 12px;
+				--r-sm: 8px;
+				--r-lg: 16px;
+			}
+
+			body {
+				font-family: 'Geologica', sans-serif;
+				background: var(--bg);
+				color: var(--text);
+				min-height: 100vh;
+				font-size: 14px
+			}
+
+			.page {
+				display: none;
+				min-height: 100vh
+			}
+
+			.page.active {
+				display: block
+			}
+
+			button {
+				font-family: 'Geologica', sans-serif;
+				cursor: pointer
+			}
+
+			input,
+			textarea,
+			select {
+				font-family: 'Geologica', sans-serif
+			}
+
+			nav {
+				background: var(--surface);
+				border-bottom: 1px solid var(--border);
+				padding: 0 28px;
+				display: flex;
+				align-items: center;
+				gap: 16px;
+				height: 58px;
+				position: sticky;
+				top: 0;
+				z-index: 200;
+				box-shadow: var(--shadow-sm)
+			}
+
+			.nav-logo {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				cursor: pointer
+			}
+
+			.nav-logo-icon {
+				width: 34px;
+				height: 34px;
+				background: var(--accent);
+				border-radius: 8px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #fff;
+				font-weight: 700;
+				font-size: 14px;
+				flex-shrink: 0
+			}
+
+			.nav-logo-text {
+				font-size: 15px;
+				font-weight: 600;
+				color: var(--accent);
+				line-height: 1.2
+			}
+
+			.nav-logo-sub {
+				font-size: 11px;
+				color: var(--text3);
+				font-weight: 400
+			}
+
+			.nav-links {
+				display: flex;
+				gap: 4px;
+				margin-left: 8px
+			}
+
+			.nav-link {
+				padding: 6px 13px;
+				border-radius: 7px;
+				font-size: 13px;
+				color: var(--text2);
+				transition: all .15s;
+				border: none;
+				background: none
+			}
+
+			.nav-link:hover {
+				background: var(--surface2);
+				color: var(--text)
+			}
+
+			.nav-link.act {
+				background: var(--accent-light);
+				color: var(--accent);
+				font-weight: 500
+			}
+
+			.nav-spacer {
+				flex: 1
+			}
+
+			.nav-user {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				font-size: 13px;
+				color: var(--text2)
+			}
+
+			.avatar {
+				width: 32px;
+				height: 32px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 12px;
+				font-weight: 600;
+				flex-shrink: 0
+			}
+
+			.av-blue {
+				background: var(--accent-light);
+				color: var(--accent)
+			}
+
+			.av-green {
+				background: var(--green-bg);
+				color: var(--green)
+			}
+
+			.av-gold {
+				background: var(--gold-bg);
+				color: var(--gold)
+			}
+
+			.av-purple {
+				background: var(--purple-bg);
+				color: var(--purple)
+			}
+
+			.btn-nav {
+				background: none;
+				border: 1.5px solid var(--border);
+				padding: 6px 16px;
+				border-radius: 7px;
+				font-size: 13px;
+				color: var(--text);
+				transition: all .18s
+			}
+
+			.btn-nav:hover {
+				border-color: var(--accent);
+				color: var(--accent)
+			}
+
+			.btn-nav.primary {
+				background: var(--accent);
+				color: #fff;
+				border-color: var(--accent)
+			}
+
+			.btn-nav.primary:hover {
+				background: var(--accent2)
+			}
+
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 24px
+			}
+
+			.home-hero {
+				background: linear-gradient(135deg, #1a3a5c 0%, #2563a8 100%);
+				color: #fff;
+				padding: 52px 0 40px;
+				position: relative;
+				overflow: hidden
+			}
+
+			.home-hero::before {
+				content: '';
+				position: absolute;
+				top: -60px;
+				right: -80px;
+				width: 380px;
+				height: 380px;
+				border-radius: 50%;
+				background: rgba(255, 255, 255, .04);
+				pointer-events: none
+			}
+
+			.hero-badge {
+				display: inline-block;
+				background: rgba(255, 255, 255, .15);
+				padding: 5px 14px;
+				border-radius: 20px;
+				font-size: 12px;
+				margin-bottom: 14px
+			}
+
+			.hero-title {
+				font-family: 'Playfair Display', serif;
+				font-size: 38px;
+				font-weight: 700;
+				margin-bottom: 10px;
+				line-height: 1.2
+			}
+
+			.hero-sub {
+				font-size: 15px;
+				opacity: .8;
+				max-width: 520px;
+				line-height: 1.65;
+				margin-bottom: 28px
+			}
+
+			.hero-stats {
+				display: flex;
+				gap: 32px
+			}
+
+			.hero-stat-num {
+				font-size: 26px;
+				font-weight: 700;
+				display: block
+			}
+
+			.hero-stat-label {
+				font-size: 12px;
+				opacity: .7
+			}
+
+			.hero-search-row {
+				margin-top: 28px;
+				display: flex;
+				gap: 10px;
+				max-width: 560px
+			}
+
+			.hero-search {
+				flex: 1;
+				padding: 12px 16px;
+				border-radius: 10px;
+				border: none;
+				font-size: 14px;
+				background: rgba(255, 255, 255, .15);
+				color: #fff;
+				outline: none
+			}
+
+			.hero-search::placeholder {
+				color: rgba(255, 255, 255, .5)
+			}
+
+			.hero-search:focus {
+				background: rgba(255, 255, 255, .22)
+			}
+
+			.card {
+				background: var(--surface);
+				border: 1px solid var(--border2);
+				border-radius: var(--r);
+				box-shadow: var(--shadow-sm)
+			}
+
+			.card-pad {
+				padding: 20px
+			}
+
+			.three-col {
+				display: grid;
+				grid-template-columns: 260px 1fr 260px;
+				gap: 22px;
+				padding: 26px 0
+			}
+
+			.side-card {
+				background: var(--surface);
+				border: 1px solid var(--border2);
+				border-radius: var(--r);
+				padding: 16px;
+				margin-bottom: 14px
+			}
+
+			.side-title {
+				font-size: 11px;
+				font-weight: 600;
+				margin-bottom: 12px;
+				color: var(--text3);
+				text-transform: uppercase;
+				letter-spacing: .6px
+			}
+
+			.feed-wrap {
+				display: flex;
+				flex-direction: column;
+				gap: 14px
+			}
+
+			.post {
+				background: var(--surface);
+				border: 1px solid var(--border2);
+				border-radius: var(--r);
+				padding: 18px 20px;
+				transition: box-shadow .18s;
+				cursor: pointer
+			}
+
+			.post:hover {
+				box-shadow: var(--shadow)
+			}
+
+			.post-head {
+				display: flex;
+				align-items: flex-start;
+				gap: 12px;
+				margin-bottom: 12px
+			}
+
+			.post-av {
+				width: 40px;
+				height: 40px;
+				border-radius: 50%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-weight: 600;
+				font-size: 14px;
+				flex-shrink: 0;
+				background: var(--accent-light);
+				color: var(--accent)
+			}
+
+			.post-meta {
+				flex: 1
+			}
+
+			.post-author {
+				font-size: 14px;
+				font-weight: 600;
+				margin-bottom: 2px
+			}
+
+			.post-username {
+				font-size: 12px;
+				color: var(--text3)
+			}
+
+			.post-date {
+				font-size: 11px;
+				color: var(--text3);
+				margin-left: auto;
+				white-space: nowrap
+			}
+
+			.post-role-badge {
+				display: inline-block;
+				font-size: 10px;
+				font-weight: 600;
+				padding: 2px 7px;
+				border-radius: 10px;
+				margin-left: 5px;
+				vertical-align: middle
+			}
+
+			.rb-director {
+				background: #fff3e0;
+				color: #e65100
+			}
+
+			.rb-teacher {
+				background: var(--accent-light);
+				color: var(--accent)
+			}
+
+			.rb-curator {
+				background: var(--green-bg);
+				color: var(--green)
+			}
+
+			.post-cat-badge {
+				display: inline-flex;
+				align-items: center;
+				gap: 4px;
+				font-size: 11px;
+				font-weight: 600;
+				padding: 3px 10px;
+				border-radius: 20px;
+				margin-bottom: 9px
+			}
+
+			.cat-cert {
+				background: #e8f4ee;
+				color: #1a6b3a
+			}
+
+			.cat-research {
+				background: #ede9fe;
+				color: #5b21b6
+			}
+
+			.cat-achievement {
+				background: #fdf6e3;
+				color: #8b6914
+			}
+
+			.cat-manual {
+				background: #e8eef6;
+				color: #1a3a5c
+			}
+
+			.cat-news {
+				background: #f0f9ff;
+				color: #0369a1
+			}
+
+			.cat-coursework {
+				background: #fff0f3;
+				color: #9d174d
+			}
+
+			.cat-mobility {
+				background: #ecfdf5;
+				color: #065f46
+			}
+
+			.cat-curator {
+				background: #f5f3ff;
+				color: #6d28d9
+			}
+
+			.cat-workload {
+				background: #fff7ed;
+				color: #c2410c
+			}
+
+			.cat-info {
+				background: #f0fdf4;
+				color: #166534
+			}
+
+			.post-title {
+				font-size: 15px;
+				font-weight: 600;
+				margin-bottom: 5px
+			}
+
+			.post-body {
+				font-size: 13px;
+				color: var(--text2);
+				line-height: 1.7
+			}
+
+			.group-tag {
+				font-size: 12px;
+				font-weight: 700;
+				color: var(--accent2);
+				font-family: monospace;
+				background: var(--accent-light);
+				padding: 2px 8px;
+				border-radius: 5px
+			}
+
+			.filter-chip {
+				display: inline-flex;
+				align-items: center;
+				padding: 5px 12px;
+				border-radius: 20px;
+				font-size: 12px;
+				font-weight: 500;
+				cursor: pointer;
+				border: 1.5px solid var(--border);
+				background: var(--surface);
+				color: var(--text2);
+				margin: 2px;
+				transition: all .15s
+			}
+
+			.filter-chip:hover,
+			.filter-chip.active {
+				border-color: var(--accent);
+				background: var(--accent-light);
+				color: var(--accent)
+			}
+
+			.teacher-mini {
+				display: flex;
+				align-items: center;
+				gap: 10px;
+				padding: 8px 0;
+				border-bottom: 1px solid var(--border2);
+				cursor: pointer;
+				transition: opacity .15s
+			}
+
+			.teacher-mini:last-child {
+				border-bottom: none
+			}
+
+			.teacher-mini:hover {
+				opacity: .7
+			}
+
+			.tm-name {
+				font-size: 13px;
+				font-weight: 500
+			}
+
+			.tm-sub {
+				font-size: 11px;
+				color: var(--text3)
+			}
+
+			.role-tag {
+				display: inline-block;
+				font-size: 10px;
+				font-weight: 600;
+				padding: 2px 8px;
+				border-radius: 10px
+			}
+
+			.rt-director {
+				background: #fff3e0;
+				color: #e65100
+			}
+
+			.rt-teacher {
+				background: var(--accent-light);
+				color: var(--accent)
+			}
+
+			.rt-curator {
+				background: var(--green-bg);
+				color: var(--green)
+			}
+
+			.section-head {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				margin-bottom: 16px
+			}
+
+			.section-title {
+				font-size: 17px;
+				font-weight: 600
+			}
+
+			.section-sub {
+				font-size: 13px;
+				color: var(--text3);
+				margin-top: 2px
+			}
+
+			.empty-state {
+				padding: 40px;
+				text-align: center;
+				color: var(--text3);
+				font-size: 13px
+			}
+
+			.prof-hero {
+				background: var(--accent);
+				color: #fff;
+				padding: 34px 0
+			}
+
+			.prof-name {
+				font-family: 'Playfair Display', serif;
+				font-size: 26px;
+				font-weight: 600;
+				margin-bottom: 6px
+			}
+
+			.prof-av {
+				width: 72px;
+				height: 72px;
+				border-radius: 50%;
+				font-size: 24px;
+				font-weight: 700;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-shrink: 0;
+				background: rgba(255, 255, 255, .15);
+				color: #fff
+			}
+
+			.profile-tabs {
+				background: var(--surface);
+				border-bottom: 1px solid var(--border);
+				display: flex;
+				gap: 0;
+				padding: 0 24px;
+				overflow-x: auto
+			}
+
+			.tab-btn {
+				padding: 12px 16px;
+				border: none;
+				background: none;
+				font-size: 13px;
+				font-weight: 500;
+				cursor: pointer;
+				color: var(--text3);
+				border-bottom: 2px solid transparent;
+				margin-bottom: -1px;
+				transition: all .15s;
+				white-space: nowrap
+			}
+
+			.tab-btn.active {
+				color: var(--accent);
+				border-bottom-color: var(--accent)
+			}
+
+			.tab-content {
+				display: none;
+				padding: 22px 0
+			}
+
+			.tab-content.active {
+				display: block
+			}
+
+			.item-card {
+				background: var(--surface);
+				border: 1px solid var(--border2);
+				border-radius: var(--r-sm);
+				padding: 15px 17px;
+				margin-bottom: 10px
+			}
+
+			.item-card-title {
+				font-size: 14px;
+				font-weight: 600;
+				margin-bottom: 3px
+			}
+
+			.item-card-sub {
+				font-size: 12px;
+				color: var(--text3)
+			}
+
+			.item-card-body {
+				font-size: 13px;
+				color: var(--text2);
+				margin-top: 6px;
+				line-height: 1.6
+			}
+
+			.grade-badge {
+				font-size: 12px;
+				font-weight: 600;
+				padding: 3px 10px;
+				border-radius: 20px
+			}
+
+			.g-excellent {
+				background: var(--green-bg);
+				color: var(--green)
+			}
+
+			.g-good {
+				background: var(--accent-light);
+				color: var(--accent)
+			}
+
+			.g-ok {
+				background: var(--gold-bg);
+				color: var(--gold)
+			}
+
+			.ach-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+				gap: 11px
+			}
+
+			.ach-card {
+				background: var(--gold-bg);
+				border: 1px solid #e0cd9a;
+				border-radius: var(--r-sm);
+				padding: 14px
+			}
+
+			.login-wrap {
+				min-height: 100vh;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				background: var(--bg);
+				padding: 20px
+			}
+
+			.login-card {
+				background: var(--surface);
+				border: 1px solid var(--border);
+				border-radius: var(--r-lg);
+				padding: 38px;
+				width: 100%;
+				max-width: 390px;
+				box-shadow: var(--shadow)
+			}
+
+			.login-logo-big {
+				width: 50px;
+				height: 50px;
+				background: var(--accent);
+				border-radius: 12px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #fff;
+				font-size: 20px;
+				font-weight: 700;
+				margin-bottom: 16px
+			}
+
+			.login-title {
+				font-family: 'Playfair Display', serif;
+				font-size: 22px;
+				font-weight: 600;
+				margin-bottom: 4px
+			}
+
+			.login-sub {
+				font-size: 13px;
+				color: var(--text3);
+				margin-bottom: 26px
+			}
+
+			.form-label {
+				font-size: 13px;
+				font-weight: 500;
+				color: var(--text2);
+				display: block;
+				margin-bottom: 5px
+			}
+
+			.form-input {
+				width: 100%;
+				padding: 10px 13px;
+				border: 1.5px solid var(--border);
+				border-radius: var(--r-sm);
+				font-size: 13px;
+				background: var(--bg);
+				color: var(--text);
+				outline: none;
+				transition: border .18s
+			}
+
+			.form-input:focus {
+				border-color: var(--accent)
+			}
+
+			.form-group {
+				margin-bottom: 15px
+			}
+
+			.btn-full {
+				width: 100%;
+				padding: 11px;
+				background: var(--accent);
+				color: #fff;
+				border: none;
+				border-radius: var(--r-sm);
+				font-size: 14px;
+				font-weight: 500;
+				transition: background .18s
+			}
+
+			.btn-full:hover {
+				background: var(--accent2)
+			}
+
+			.login-error {
+				background: #fdf0ee;
+				color: #c0392b;
+				font-size: 13px;
+				padding: 10px 13px;
+				border-radius: 8px;
+				margin-bottom: 13px;
+				display: none
+			}
+
+			.back-link {
+				background: none;
+				border: none;
+				color: var(--text3);
+				font-size: 13px;
+				margin-top: 13px;
+				display: block;
+				text-align: center;
+				width: 100%
+			}
+
+			.cabinet-layout {
+				display: grid;
+				grid-template-columns: 225px 1fr;
+				min-height: calc(100vh - 58px)
+			}
+
+			.sidebar {
+				background: var(--surface);
+				border-right: 1px solid var(--border);
+				padding: 18px 0
+			}
+
+			.sidebar-section {
+				padding: 0 14px;
+				margin: 16px 0 4px;
+				font-size: 10px;
+				font-weight: 600;
+				color: var(--text3);
+				letter-spacing: .6px;
+				text-transform: uppercase
+			}
+
+			.sidebar-section:first-child {
+				margin-top: 0
+			}
+
+			.sidebar-item {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+				padding: 8px 14px;
+				font-size: 13px;
+				color: var(--text2);
+				cursor: pointer;
+				transition: all .15s;
+				margin: 1px 8px;
+				border-radius: 7px
+			}
+
+			.sidebar-item:hover {
+				background: var(--surface2);
+				color: var(--text)
+			}
+
+			.sidebar-item.active {
+				background: var(--accent-light);
+				color: var(--accent);
+				font-weight: 500
+			}
+
+			.si-icon {
+				font-size: 15px;
+				flex-shrink: 0
+			}
+
+			.cab-main {
+				padding: 26px 30px;
+				overflow-y: auto
+			}
+
+			.cab-section {
+				display: none
+			}
+
+			.cab-section.active {
+				display: block
+			}
+
+			.cab-title {
+				font-family: 'Playfair Display', serif;
+				font-size: 21px;
+				font-weight: 600;
+				margin-bottom: 5px
+			}
+
+			.cab-sub {
+				font-size: 13px;
+				color: var(--text3);
+				margin-bottom: 20px
+			}
+
+			.add-form {
+				background: var(--surface);
+				border: 1px solid var(--border2);
+				border-radius: var(--r);
+				padding: 20px;
+				margin-bottom: 20px
+			}
+
+			.add-form-title {
+				font-size: 13px;
+				font-weight: 600;
+				margin-bottom: 14px;
+				color: var(--text)
+			}
+
+			.form-row {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 13px
+			}
+
+			.form-row-3 {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 13px
+			}
+
+			.form-textarea {
+				width: 100%;
+				padding: 10px 13px;
+				border: 1.5px solid var(--border);
+				border-radius: var(--r-sm);
+				font-size: 13px;
+				background: var(--bg);
+				color: var(--text);
+				outline: none;
+				resize: vertical;
+				min-height: 76px;
+				transition: border .18s
+			}
+
+			.form-textarea:focus {
+				border-color: var(--accent)
+			}
+
+			.form-select {
+				width: 100%;
+				padding: 10px 13px;
+				border: 1.5px solid var(--border);
+				border-radius: var(--r-sm);
+				font-size: 13px;
+				background: var(--bg);
+				color: var(--text);
+				outline: none
+			}
+
+			.btn-add {
+				background: var(--accent);
+				color: #fff;
+				border: none;
+				padding: 9px 18px;
+				border-radius: var(--r-sm);
+				font-size: 13px;
+				font-weight: 500;
+				transition: background .18s
+			}
+
+			.btn-add:hover {
+				background: var(--accent2)
+			}
+
+			.btn-sm {
+				padding: 5px 13px;
+				border-radius: 6px;
+				font-size: 12px;
+				font-weight: 500;
+				border: 1.5px solid var(--border);
+				background: var(--surface);
+				color: var(--text2);
+				transition: all .15s
+			}
+
+			.btn-sm:hover {
+				border-color: var(--accent);
+				color: var(--accent)
+			}
+
+			.btn-danger {
+				border-color: #ffb3b3;
+				color: #b83232
+			}
+
+			.btn-danger:hover {
+				background: #fff0f0;
+				border-color: #b83232
+			}
+
+			.admin-layout {
+				display: grid;
+				grid-template-columns: 215px 1fr;
+				min-height: calc(100vh - 58px)
+			}
+
+			.admin-nav {
+				background: #1a1a2e;
+				padding: 18px 0
+			}
+
+			.admin-nav .sidebar-section {
+				color: rgba(255, 255, 255, .3);
+				padding: 0 14px
+			}
+
+			.admin-nav .sidebar-item {
+				color: rgba(255, 255, 255, .65);
+				margin: 1px 8px
+			}
+
+			.admin-nav .sidebar-item:hover {
+				background: rgba(255, 255, 255, .08);
+				color: #fff
+			}
+
+			.admin-nav .sidebar-item.active {
+				background: var(--accent);
+				color: #fff
+			}
+
+			.admin-main {
+				padding: 26px 30px;
+				overflow-y: auto
+			}
+
+			.admin-section {
+				display: none
+			}
+
+			.admin-section.active {
+				display: block
+			}
+
+			.stat-grid {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 13px;
+				margin-bottom: 22px
+			}
+
+			.stat-card {
+				background: var(--surface);
+				border: 1px solid var(--border2);
+				border-radius: var(--r);
+				padding: 16px
+			}
+
+			.stat-num {
+				font-size: 26px;
+				font-weight: 700;
+				color: var(--accent);
+				margin-bottom: 3px
+			}
+
+			.stat-label {
+				font-size: 12px;
+				color: var(--text3)
+			}
+
+			.table-wrap {
+				overflow-x: auto
+			}
+
+			table {
+				width: 100%;
+				border-collapse: collapse;
+				font-size: 13px
+			}
+
+			th {
+				padding: 10px 13px;
+				text-align: left;
+				background: var(--surface2);
+				color: var(--text3);
+				font-weight: 600;
+				font-size: 11px;
+				text-transform: uppercase;
+				letter-spacing: .4px
+			}
+
+			td {
+				padding: 10px 13px;
+				border-bottom: 1px solid var(--border2)
+			}
+
+			tr:last-child td {
+				border-bottom: none
+			}
+
+			tr:hover td {
+				background: var(--surface2)
+			}
+
+			.group-card {
+				background: var(--surface);
+				border: 1px solid var(--border2);
+				border-radius: var(--r-sm);
+				padding: 13px 15px;
+				margin-bottom: 9px;
+				display: flex;
+				align-items: center;
+				gap: 12px
+			}
+
+			.toast {
+				position: fixed;
+				bottom: 22px;
+				right: 22px;
+				background: #111827;
+				color: #fff;
+				padding: 10px 18px;
+				border-radius: 10px;
+				font-size: 13px;
+				z-index: 9999;
+				opacity: 0;
+				transform: translateY(8px);
+				transition: all .28s;
+				pointer-events: none
+			}
+
+			.toast.show {
+				opacity: 1;
+				transform: translateY(0)
+			}
+
+			.back-btn {
+				background: none;
+				border: none;
+				color: rgba(255, 255, 255, .75);
+				font-size: 13px;
+				display: flex;
+				align-items: center;
+				gap: 5px;
+				margin-bottom: 16px;
+				cursor: pointer
+			}
+
+			.back-btn:hover {
+				color: #fff
+			}
+
+			@media(max-width:768px) {
+
+				.three-col,
+				.cabinet-layout,
+				.admin-layout {
+					grid-template-columns: 1fr
+				}
+
+				.form-row,
+				.form-row-3,
+				.stat-grid {
+					grid-template-columns: 1fr
+				}
+
+				.nav-links {
+					display: none
+				}
+
+				.hero-stats {
+					gap: 18px
+				}
+
+				.hero-title {
+					font-size: 26px
+				}
+			}
+		</style>
+	</head>
+Вход — одна форма для учителей и для админа:
+
+Админ: Admin123 / Admin123
+Учитель 1: seitkali / Teach2024
+Учитель 2: abdrakhmanova / Tech456
+Учитель 3: dzhaksybekov / Bio789 -->
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>АССОИУ — Портал колледжа</title>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+		rel="stylesheet">
+	<style>
+		*,
+		*::before,
+		*::after {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0
+		}
+
+		:root {
+			--bg: #f2f0ea;
+			--surface: #fdfcf8;
+			--surface2: #eceae3;
+			--surface3: #e4e1d8;
+			--accent: #1a3a5c;
+			--accent2: #2563a8;
+			--accent-light: #e8eef6;
+			--accent-mid: #3b82c4;
+			--green: #1a6b3a;
+			--green-bg: #e8f4ee;
+			--gold: #8b6914;
+			--gold-bg: #fdf6e3;
+			--purple: #5b21b6;
+			--purple-bg: #f0ebff;
+			--coral: #b83232;
+			--coral-bg: #fdf0f0;
+			--text: #111827;
+			--text2: #4b5563;
+			--text3: #9ca3af;
+			--border: #ddd9ce;
+			--border2: #e8e4da;
+			--shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
+			--shadow-sm: 0 1px 6px rgba(0, 0, 0, 0.05);
+			--r: 12px;
+			--r-sm: 8px;
+			--r-lg: 16px;
+		}
+
+		body {
+			font-family: 'Geologica', sans-serif;
+			background: var(--bg);
+			color: var(--text);
+			min-height: 100vh;
+			font-size: 14px
+		}
+
+		.page {
+			display: none;
+			min-height: 100vh
+		}
+
+		.page.active {
+			display: block
+		}
+
+		button {
+			font-family: 'Geologica', sans-serif;
+			cursor: pointer
+		}
+
+		input,
+		textarea,
+		select {
+			font-family: 'Geologica', sans-serif
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none
+		}
+
+		code {
+			font-family: monospace
+		}
+
+		/* ===== NAV ===== */
+		nav {
+			background: var(--surface);
+			border-bottom: 1px solid var(--border);
+			padding: 0 28px;
+			display: flex;
+			align-items: center;
+			gap: 16px;
+			height: 58px;
+			position: sticky;
+			top: 0;
+			z-index: 200;
+			box-shadow: var(--shadow-sm)
+		}
+
+		.nav-logo {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			cursor: pointer
+		}
+
+		.nav-logo-icon {
+			width: 34px;
+			height: 34px;
+			background: var(--accent);
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			font-weight: 700;
+			font-size: 14px;
+			flex-shrink: 0
+		}
+
+		.nav-logo-text {
+			font-size: 15px;
+			font-weight: 600;
+			color: var(--accent);
+			line-height: 1.2
+		}
+
+		.nav-logo-sub {
+			font-size: 11px;
+			color: var(--text3);
+			font-weight: 400
+		}
+
+		.nav-links {
+			display: flex;
+			gap: 4px;
+			margin-left: 8px
+		}
+
+		.nav-link {
+			padding: 6px 13px;
+			border-radius: 7px;
+			font-size: 13px;
+			color: var(--text2);
+			transition: all .15s;
+			border: none;
+			background: none
+		}
+
+		.nav-link:hover {
+			background: var(--surface2);
+			color: var(--text)
+		}
+
+		.nav-link.active {
+			background: var(--accent-light);
+			color: var(--accent);
+			font-weight: 500
+		}
+
+		.nav-spacer {
+			flex: 1
+		}
+
+		.nav-user {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			font-size: 13px;
+			color: var(--text2)
+		}
+
+		.nav-user-role {
+			font-size: 11px;
+			color: var(--text3)
+		}
+
+		.avatar {
+			width: 32px;
+			height: 32px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: 12px;
+			font-weight: 600;
+			flex-shrink: 0
+		}
+
+		.av-blue {
+			background: var(--accent-light);
+			color: var(--accent)
+		}
+
+		.av-green {
+			background: var(--green-bg);
+			color: var(--green)
+		}
+
+		.av-gold {
+			background: var(--gold-bg);
+			color: var(--gold)
+		}
+
+		.av-purple {
+			background: var(--purple-bg);
+			color: var(--purple)
+		}
+
+		.btn-nav {
+			background: none;
+			border: 1.5px solid var(--border);
+			padding: 6px 16px;
+			border-radius: 7px;
+			font-size: 13px;
+			color: var(--text);
+			transition: all .18s
+		}
+
+		.btn-nav:hover {
+			border-color: var(--accent);
+			color: var(--accent)
+		}
+
+		.btn-nav.primary {
+			background: var(--accent);
+			color: #fff;
+			border-color: var(--accent)
+		}
+
+		.btn-nav.primary:hover {
+			background: var(--accent2)
+		}
+
+		/* ===== LAYOUT ===== */
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 24px
+		}
+
+		.two-col {
+			display: grid;
+			grid-template-columns: 320px 1fr;
+			gap: 24px;
+			padding: 28px 0
+		}
+
+		.three-col {
+			display: grid;
+			grid-template-columns: 220px 1fr 300px;
+			gap: 20px;
+			padding: 28px 0
+		}
+
+		/* ===== HOME HERO ===== */
+		.home-hero {
+			background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
+			color: #fff;
+			padding: 52px 0 40px;
+			position: relative;
+			overflow: hidden
+		}
+
+		.home-hero::before {
+			content: '';
+			position: absolute;
+			top: -60px;
+			right: -80px;
+			width: 380px;
+			height: 380px;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.04);
+			pointer-events: none
+		}
+
+		.home-hero::after {
+			content: '';
+			position: absolute;
+			bottom: -100px;
+			left: 10%;
+			width: 250px;
+			height: 250px;
+			border-radius: 50%;
+			background: rgba(255, 255, 255, 0.03);
+			pointer-events: none
+		}
+
+		.hero-badge {
+			display: inline-block;
+			background: rgba(255, 255, 255, 0.15);
+			padding: 5px 14px;
+			border-radius: 20px;
+			font-size: 12px;
+			margin-bottom: 14px;
+			letter-spacing: .3px
+		}
+
+		.hero-title {
+			font-family: 'Playfair Display', serif;
+			font-size: 38px;
+			font-weight: 700;
+			margin-bottom: 10px;
+			line-height: 1.2
+		}
+
+		.hero-sub {
+			font-size: 15px;
+			opacity: .8;
+			max-width: 520px;
+			line-height: 1.65;
+			margin-bottom: 28px
+		}
+
+		.hero-stats {
+			display: flex;
+			gap: 32px
+		}
+
+		.hero-stat-num {
+			font-size: 26px;
+			font-weight: 700;
+			display: block
+		}
+
+		.hero-stat-label {
+			font-size: 12px;
+			opacity: .7
+		}
+
+		.hero-search-row {
+			margin-top: 28px;
+			display: flex;
+			gap: 10px;
+			max-width: 560px
+		}
+
+		.hero-search {
+			flex: 1;
+			padding: 12px 16px;
+			border-radius: 10px;
+			border: none;
+			font-size: 14px;
+			background: rgba(255, 255, 255, 0.15);
+			color: #fff;
+			outline: none;
+			backdrop-filter: blur(4px)
+		}
+
+		.hero-search::placeholder {
+			color: rgba(255, 255, 255, .5)
+		}
+
+		.hero-search:focus {
+			background: rgba(255, 255, 255, .22)
+		}
+
+		.btn-hero {
+			padding: 12px 20px;
+			border-radius: 10px;
+			background: #fff;
+			color: var(--accent);
+			border: none;
+			font-size: 14px;
+			font-weight: 600;
+			white-space: nowrap
+		}
+
+		/* ===== CARDS & SURFACES ===== */
+		.card {
+			background: var(--surface);
+			border: 1px solid var(--border2);
+			border-radius: var(--r);
+			box-shadow: var(--shadow-sm)
+		}
+
+		.card-pad {
+			padding: 20px
+		}
+
+		.section-head {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 18px
+		}
+
+		.section-title {
+			font-size: 17px;
+			font-weight: 600
+		}
+
+		.section-sub {
+			font-size: 13px;
+			color: var(--text3);
+			margin-top: 2px
+		}
+
+		/* ===== FEED / POST ===== */
+		.feed-wrap {
+			display: flex;
+			flex-direction: column;
+			gap: 14px
+		}
+
+		.post {
+			background: var(--surface);
+			border: 1px solid var(--border2);
+			border-radius: var(--r);
+			padding: 20px 22px;
+			transition: box-shadow .18s
+		}
+
+		.post:hover {
+			box-shadow: var(--shadow)
+		}
+
+		.post-head {
+			display: flex;
+			align-items: flex-start;
+			gap: 12px;
+			margin-bottom: 14px
+		}
+
+		.post-av {
+			width: 42px;
+			height: 42px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: 600;
+			font-size: 15px;
+			flex-shrink: 0
+		}
+
+		.post-meta {
+			flex: 1
+		}
+
+		.post-author {
+			font-size: 14px;
+			font-weight: 600;
+			margin-bottom: 2px
+		}
+
+		.post-username {
+			font-size: 12px;
+			color: var(--text3)
+		}
+
+		.post-username .group-tag {
+			color: var(--accent2);
+			font-weight: 500
+		}
+
+		.post-date {
+			font-size: 12px;
+			color: var(--text3);
+			margin-left: auto;
+			white-space: nowrap
+		}
+
+		.post-role-badge {
+			display: inline-block;
+			font-size: 10px;
+			font-weight: 600;
+			padding: 2px 8px;
+			border-radius: 10px;
+			margin-left: 6px;
+			vertical-align: middle
+		}
+
+		.rb-dir {
+			background: #fdf0e8;
+			color: #c05a00
+		}
+
+		.rb-teach {
+			background: var(--accent-light);
+			color: var(--accent)
+		}
+
+		.rb-cur {
+			background: var(--green-bg);
+			color: var(--green)
+		}
+
+		.post-cat-badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 5px;
+			font-size: 12px;
+			font-weight: 500;
+			padding: 4px 11px;
+			border-radius: 20px;
+			margin-bottom: 10px
+		}
+
+		.cat-cert {
+			background: #e8f4ee;
+			color: #1a6b3a
+		}
+
+		.cat-research {
+			background: #ede9fe;
+			color: #5b21b6
+		}
+
+		.cat-achievement {
+			background: #fdf6e3;
+			color: #8b6914
+		}
+
+		.cat-manual {
+			background: #e8eef6;
+			color: #1a3a5c
+		}
+
+		.cat-news {
+			background: #f0f9ff;
+			color: #0369a1
+		}
+
+		.cat-coursework {
+			background: #fff0f3;
+			color: #9d174d
+		}
+
+		.cat-mobility {
+			background: #ecfdf5;
+			color: #065f46
+		}
+
+		.cat-curator {
+			background: #f5f3ff;
+			color: #6d28d9
+		}
+
+		.cat-workload {
+			background: #fff7ed;
+			color: #c2410c
+		}
+
+		.cat-info {
+			background: #f0fdf4;
+			color: #166534
+		}
+
+		.post-title {
+			font-size: 15px;
+			font-weight: 600;
+			margin-bottom: 6px
+		}
+
+		.post-body {
+			font-size: 14px;
+			color: var(--text2);
+			line-height: 1.7
+		}
+
+		.post-footer {
+			margin-top: 14px;
+			padding-top: 12px;
+			border-top: 1px solid var(--border2);
+			display: flex;
+			align-items: center;
+			gap: 16px
+		}
+
+		.post-stat {
+			font-size: 12px;
+			color: var(--text3);
+			display: flex;
+			align-items: center;
+			gap: 4px
+		}
+
+		/* ===== SIDEBAR CARDS ===== */
+		.side-card {
+			background: var(--surface);
+			border: 1px solid var(--border2);
+			border-radius: var(--r);
+			padding: 18px;
+			margin-bottom: 14px
+		}
+
+		.side-title {
+			font-size: 13px;
+			font-weight: 600;
+			margin-bottom: 12px;
+			color: var(--text2);
+			text-transform: uppercase;
+			letter-spacing: .5px
+		}
+
+		.teacher-mini {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+			padding: 8px 0;
+			border-bottom: 1px solid var(--border2);
+			cursor: pointer;
+			transition: opacity .15s
+		}
+
+		.teacher-mini:last-child {
+			border-bottom: none
+		}
+
+		.teacher-mini:hover {
+			opacity: .75
+		}
+
+		.tm-name {
+			font-size: 13px;
+			font-weight: 500
+		}
+
+		.tm-subject {
+			font-size: 11px;
+			color: var(--text3)
+		}
+
+		.filter-chip {
+			display: inline-flex;
+			align-items: center;
+			padding: 6px 13px;
+			border-radius: 20px;
+			font-size: 12px;
+			font-weight: 500;
+			cursor: pointer;
+			border: 1.5px solid var(--border);
+			background: var(--surface);
+			color: var(--text2);
+			margin: 3px;
+			transition: all .15s
+		}
+
+		.filter-chip:hover,
+		.filter-chip.active {
+			border-color: var(--accent);
+			background: var(--accent-light);
+			color: var(--accent)
+		}
+
+		/* ===== TEACHER PROFILE PUBLIC ===== */
+		.prof-hero {
+			background: var(--accent);
+			color: #fff;
+			padding: 36px 0
+		}
+
+		.prof-av {
+			width: 76px;
+			height: 76px;
+			border-radius: 50%;
+			font-size: 26px;
+			font-weight: 700;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-shrink: 0
+		}
+
+		.prof-name {
+			font-family: 'Playfair Display', serif;
+			font-size: 26px;
+			font-weight: 600;
+			margin-bottom: 6px
+		}
+
+		.prof-role-tag {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			font-size: 13px;
+			padding: 4px 14px;
+			border-radius: 20px;
+			background: rgba(255, 255, 255, .15);
+			margin-bottom: 8px
+		}
+
+		.prof-username {
+			font-size: 14px;
+			opacity: .7
+		}
+
+		.profile-tabs {
+			background: var(--surface);
+			border-bottom: 1px solid var(--border);
+			display: flex;
+			gap: 0;
+			padding: 0 24px;
+			overflow-x: auto
+		}
+
+		.tab-btn {
+			padding: 13px 18px;
+			border: none;
+			background: none;
+			font-size: 13px;
+			font-weight: 500;
+			cursor: pointer;
+			color: var(--text3);
+			border-bottom: 2px solid transparent;
+			margin-bottom: -1px;
+			transition: all .15s;
+			white-space: nowrap
+		}
+
+		.tab-btn.active {
+			color: var(--accent);
+			border-bottom-color: var(--accent)
+		}
+
+		.tab-content {
+			display: none;
+			padding: 24px 0
+		}
+
+		.tab-content.active {
+			display: block
+		}
+
+		/* ===== PUBLIC SECTIONS ===== */
+		.item-card {
+			background: var(--surface);
+			border: 1px solid var(--border2);
+			border-radius: var(--r-sm);
+			padding: 16px 18px;
+			margin-bottom: 11px
+		}
+
+		.item-card-title {
+			font-size: 14px;
+			font-weight: 600;
+			margin-bottom: 4px
+		}
+
+		.item-card-sub {
+			font-size: 12px;
+			color: var(--text3)
+		}
+
+		.item-card-body {
+			font-size: 13px;
+			color: var(--text2);
+			margin-top: 6px;
+			line-height: 1.6
+		}
+
+		.grade-badge {
+			font-size: 12px;
+			font-weight: 600;
+			padding: 3px 11px;
+			border-radius: 20px
+		}
+
+		.g-excellent {
+			background: var(--green-bg);
+			color: var(--green)
+		}
+
+		.g-good {
+			background: var(--accent-light);
+			color: var(--accent)
+		}
+
+		.g-ok {
+			background: var(--gold-bg);
+			color: var(--gold)
+		}
+
+		.ach-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+			gap: 12px
+		}
+
+		.ach-card {
+			background: var(--gold-bg);
+			border: 1px solid #e0cd9a;
+			border-radius: var(--r-sm);
+			padding: 16px
+		}
+
+		.ach-icon {
+			font-size: 22px;
+			margin-bottom: 8px
+		}
+
+		.ach-name {
+			font-size: 13px;
+			font-weight: 600;
+			margin-bottom: 3px
+		}
+
+		.ach-stu {
+			font-size: 12px;
+			color: var(--text2)
+		}
+
+		.empty-state {
+			padding: 48px;
+			text-align: center;
+			color: var(--text3);
+			font-size: 13px
+		}
+
+		/* ===== LOGIN ===== */
+		.login-wrap {
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: var(--bg);
+			padding: 20px
+		}
+
+		.login-card {
+			background: var(--surface);
+			border: 1px solid var(--border);
+			border-radius: var(--r-lg);
+			padding: 40px;
+			width: 100%;
+			max-width: 400px;
+			box-shadow: var(--shadow)
+		}
+
+		.login-logo-big {
+			width: 52px;
+			height: 52px;
+			background: var(--accent);
+			border-radius: 12px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			font-size: 20px;
+			font-weight: 700;
+			margin-bottom: 16px
+		}
+
+		.login-title {
+			font-family: 'Playfair Display', serif;
+			font-size: 22px;
+			font-weight: 600;
+			margin-bottom: 4px
+		}
+
+		.login-sub {
+			font-size: 13px;
+			color: var(--text3);
+			margin-bottom: 28px
+		}
+
+		.form-label {
+			font-size: 13px;
+			font-weight: 500;
+			color: var(--text2);
+			display: block;
+			margin-bottom: 6px
+		}
+
+		.form-input {
+			width: 100%;
+			padding: 10px 14px;
+			border: 1.5px solid var(--border);
+			border-radius: var(--r-sm);
+			font-size: 14px;
+			background: var(--bg);
+			color: var(--text);
+			outline: none;
+			transition: border .18s
+		}
+
+		.form-input:focus {
+			border-color: var(--accent)
+		}
+
+		.form-group {
+			margin-bottom: 16px
+		}
+
+		.btn-full {
+			width: 100%;
+			padding: 11px;
+			background: var(--accent);
+			color: #fff;
+			border: none;
+			border-radius: var(--r-sm);
+			font-size: 14px;
+			font-weight: 500;
+			transition: background .18s
+		}
+
+		.btn-full:hover {
+			background: var(--accent2)
+		}
+
+		.login-error {
+			background: #fdf0ee;
+			color: #c0392b;
+			font-size: 13px;
+			padding: 10px 14px;
+			border-radius: 8px;
+			margin-bottom: 14px;
+			display: none
+		}
+
+		.back-link {
+			background: none;
+			border: none;
+			color: var(--text3);
+			font-size: 13px;
+			margin-top: 14px;
+			display: block;
+			text-align: center;
+			width: 100%
+		}
+
+		.back-link:hover {
+			color: var(--accent)
+		}
+
+		/* ===== CABINET ===== */
+		.cabinet-layout {
+			display: grid;
+			grid-template-columns: 230px 1fr;
+			min-height: calc(100vh - 58px)
+		}
+
+		.sidebar {
+			background: var(--surface);
+			border-right: 1px solid var(--border);
+			padding: 20px 0
+		}
+
+		.sidebar-section {
+			padding: 0 16px;
+			margin-bottom: 6px;
+			font-size: 10px;
+			font-weight: 600;
+			color: var(--text3);
+			letter-spacing: .7px;
+			text-transform: uppercase;
+			margin-top: 18px
+		}
+
+		.sidebar-section:first-child {
+			margin-top: 0
+		}
+
+		.sidebar-item {
+			display: flex;
+			align-items: center;
+			gap: 9px;
+			padding: 9px 16px;
+			font-size: 13px;
+			color: var(--text2);
+			cursor: pointer;
+			transition: all .15s;
+			border-radius: 0;
+			margin: 1px 8px;
+			border-radius: 7px
+		}
+
+		.sidebar-item:hover {
+			background: var(--surface2);
+			color: var(--text)
+		}
+
+		.sidebar-item.active {
+			background: var(--accent-light);
+			color: var(--accent);
+			font-weight: 500
+		}
+
+		.sidebar-item .si-icon {
+			font-size: 15px;
+			flex-shrink: 0
+		}
+
+		.cab-main {
+			padding: 28px 32px;
+			overflow-y: auto
+		}
+
+		.cab-section {
+			display: none
+		}
+
+		.cab-section.active {
+			display: block
+		}
+
+		.cab-title {
+			font-family: 'Playfair Display', serif;
+			font-size: 22px;
+			font-weight: 600;
+			margin-bottom: 6px
+		}
+
+		.cab-sub {
+			font-size: 13px;
+			color: var(--text3);
+			margin-bottom: 22px
+		}
+
+		/* ===== FORMS ===== */
+		.add-form {
+			background: var(--surface);
+			border: 1px solid var(--border2);
+			border-radius: var(--r);
+			padding: 22px;
+			margin-bottom: 22px
+		}
+
+		.add-form-title {
+			font-size: 14px;
+			font-weight: 600;
+			margin-bottom: 16px;
+			color: var(--text)
+		}
+
+		.form-row {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 14px
+		}
+
+		.form-row-3 {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 14px
+		}
+
+		.form-textarea {
+			width: 100%;
+			padding: 10px 14px;
+			border: 1.5px solid var(--border);
+			border-radius: var(--r-sm);
+			font-size: 13px;
+			background: var(--bg);
+			color: var(--text);
+			outline: none;
+			resize: vertical;
+			min-height: 80px;
+			transition: border .18s
+		}
+
+		.form-textarea:focus {
+			border-color: var(--accent)
+		}
+
+		.form-select {
+			width: 100%;
+			padding: 10px 14px;
+			border: 1.5px solid var(--border);
+			border-radius: var(--r-sm);
+			font-size: 13px;
+			background: var(--bg);
+			color: var(--text);
+			outline: none
+		}
+
+		.btn-add {
+			background: var(--accent);
+			color: #fff;
+			border: none;
+			padding: 9px 20px;
+			border-radius: var(--r-sm);
+			font-size: 13px;
+			font-weight: 500;
+			transition: background .18s
+		}
+
+		.btn-add:hover {
+			background: var(--accent2)
+		}
+
+		.btn-sm {
+			padding: 6px 14px;
+			border-radius: 6px;
+			font-size: 12px;
+			font-weight: 500;
+			border: 1.5px solid var(--border);
+			background: var(--surface);
+			color: var(--text2);
+			transition: all .15s
+		}
+
+		.btn-sm:hover {
+			border-color: var(--accent);
+			color: var(--accent)
+		}
+
+		.btn-danger {
+			border-color: #ffb3b3;
+			color: var(--coral)
+		}
+
+		.btn-danger:hover {
+			background: #fff0f0;
+			border-color: var(--coral)
+		}
+
+		/* ===== ADMIN ===== */
+		.admin-layout {
+			display: grid;
+			grid-template-columns: 220px 1fr;
+			min-height: calc(100vh - 58px)
+		}
+
+		.admin-nav {
+			background: #1a1a2e;
+			padding: 20px 0
+		}
+
+		.admin-nav .sidebar-section {
+			color: rgba(255, 255, 255, .3);
+			padding: 0 16px
+		}
+
+		.admin-nav .sidebar-item {
+			color: rgba(255, 255, 255, .65);
+			margin: 1px 8px
+		}
+
+		.admin-nav .sidebar-item:hover {
+			background: rgba(255, 255, 255, .08);
+			color: #fff
+		}
+
+		.admin-nav .sidebar-item.active {
+			background: var(--accent);
+			color: #fff
+		}
+
+		.admin-main {
+			padding: 28px 32px;
+			overflow-y: auto
+		}
+
+		.admin-section {
+			display: none
+		}
+
+		.admin-section.active {
+			display: block
+		}
+
+		.stat-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 14px;
+			margin-bottom: 24px
+		}
+
+		.stat-card {
+			background: var(--surface);
+			border: 1px solid var(--border2);
+			border-radius: var(--r);
+			padding: 18px
+		}
+
+		.stat-num {
+			font-size: 28px;
+			font-weight: 700;
+			color: var(--accent);
+			margin-bottom: 4px
+		}
+
+		.stat-label {
+			font-size: 12px;
+			color: var(--text3)
+		}
+
+		.table-wrap {
+			overflow-x: auto
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			font-size: 13px
+		}
+
+		th {
+			padding: 11px 14px;
+			text-align: left;
+			background: var(--surface2);
+			color: var(--text3);
+			font-weight: 600;
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: .4px
+		}
+
+		td {
+			padding: 11px 14px;
+			border-bottom: 1px solid var(--border2);
+			color: var(--text)
+		}
+
+		tr:last-child td {
+			border-bottom: none
+		}
+
+		tr:hover td {
+			background: var(--surface2)
+		}
+
+		.role-tag {
+			display: inline-block;
+			font-size: 11px;
+			font-weight: 600;
+			padding: 3px 10px;
+			border-radius: 10px
+		}
+
+		.rt-director {
+			background: #fff3e0;
+			color: #e65100
+		}
+
+		.rt-teacher {
+			background: var(--accent-light);
+			color: var(--accent)
+		}
+
+		.rt-curator {
+			background: var(--green-bg);
+			color: var(--green)
+		}
+
+		.status-dot {
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			display: inline-block;
+			margin-right: 5px
+		}
+
+		.sd-active {
+			background: #22c55e
+		}
+
+		.sd-inactive {
+			background: #9ca3af
+		}
+
+		/* ===== GROUPS ===== */
+		.group-card {
+			background: var(--surface);
+			border: 1px solid var(--border2);
+			border-radius: var(--r-sm);
+			padding: 14px 16px;
+			margin-bottom: 10px;
+			display: flex;
+			align-items: center;
+			gap: 14px
+		}
+
+		.group-tag {
+			font-size: 13px;
+			font-weight: 700;
+			color: var(--accent2);
+			font-family: monospace;
+			background: var(--accent-light);
+			padding: 4px 10px;
+			border-radius: 6px
+		}
+
+		.group-curator {
+			font-size: 12px;
+			color: var(--text3)
+		}
+
+		/* ===== TOAST ===== */
+		.toast {
+			position: fixed;
+			bottom: 22px;
+			right: 22px;
+			background: #111827;
+			color: #fff;
+			padding: 11px 20px;
+			border-radius: 10px;
+			font-size: 13px;
+			z-index: 9999;
+			opacity: 0;
+			transform: translateY(8px);
+			transition: all .28s;
+			pointer-events: none
+		}
+
+		.toast.show {
+			opacity: 1;
+			transform: translateY(0)
+		}
+
+		/* ===== MISC ===== */
+		.badge {
+			display: inline-block;
+			font-size: 11px;
+			padding: 3px 9px;
+			border-radius: 20px;
+			margin: 2px
+		}
+
+		.divider {
+			border: none;
+			border-top: 1px solid var(--border2);
+			margin: 18px 0
+		}
+
+		.back-btn {
+			background: none;
+			border: none;
+			color: rgba(255, 255, 255, .75);
+			font-size: 13px;
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			margin-bottom: 18px
+		}
+
+		.back-btn:hover {
+			color: #fff
+		}
+
+		.info-row {
+			display: flex;
+			gap: 6px;
+			align-items: center;
+			font-size: 13px;
+			color: var(--text2);
+			margin-bottom: 6px
+		}
+
+		.info-label {
+			color: var(--text3);
+			min-width: 120px
+		}
+
+		@media(max-width:768px) {
+
+			.two-col,
+			.three-col,
+			.cabinet-layout,
+			.admin-layout {
+				grid-template-columns: 1fr
+			}
+
+			.form-row,
+			.form-row-3,
+			.stat-grid {
+				grid-template-columns: 1fr
+			}
+
+			nav {
+				padding: 0 14px;
+				gap: 8px
+			}
+
+			.nav-links {
+				display: none
+			}
+
+			.hero-stats {
+				gap: 18px
+			}
+
+			.hero-title {
+				font-size: 26px
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<div class="toast" id="toast"></div>
+
+	<!-- ============================================================
+     PAGE: HOME
+============================================================ -->
+	<div class="page active" id="page-home">
+		<nav>
+			<div class="nav-logo" onclick="goHome()">
+				<div class="nav-logo-icon">АС</div>
+				<div>
+					<div class="nav-logo-text">АССОИУ</div>
+					<div class="nav-logo-sub">Колледж</div>
+				</div>
+			</div>
+			<div class="nav-links">
+				<button class="nav-link active" onclick="scrollToFeed()">Лента</button>
+				<button class="nav-link" onclick="scrollToTeachers()">Преподаватели</button>
+				<button class="nav-link" onclick="scrollToAbout()">О колледже</button>
+			</div>
+			<div class="nav-spacer"></div>
+			<button class="btn-nav primary" onclick="goPage('login')">Войти</button>
+		</nav>
+
+		<!-- HERO -->
+		<div class="home-hero">
+			<div class="container">
+				<div class="hero-badge">Академия специального среднего образования и информационных услуг</div>
+				<div class="hero-title">Портал<br>преподавателей АССОИУ</div>
+				<div class="hero-sub">Публикации, достижения студентов, научные исследования, сертификаты и учебные материалы
+					наших преподавателей — всё в одном месте.</div>
+				<div class="hero-stats">
+					<div><span class="hero-stat-num" id="stat-teachers">0</span><span
+							class="hero-stat-label">Преподавателей</span></div>
+					<div><span class="hero-stat-num" id="stat-posts">0</span><span class="hero-stat-label">Публикаций</span></div>
+					<div><span class="hero-stat-num" id="stat-groups">0</span><span class="hero-stat-label">Групп</span></div>
+				</div>
+				<div class="hero-search-row">
+					<input class="hero-search" id="home-search" type="text" placeholder="Поиск по публикациям, преподавателям..."
+						oninput="filterFeed()">
+				</div>
+			</div>
+		</div>
+
+		<!-- MAIN CONTENT -->
+		<div class="container">
+			<div class="three-col">
+				<!-- LEFT: FILTERS -->
+				<div>
+					<div class="side-card" id="section-about">
+						<div class="side-title">Категории</div>
+						<div style="display:flex;flex-wrap:wrap;gap:0">
+							<div class="filter-chip active" onclick="setFilter('all',this)">Все</div>
+							<div class="filter-chip" onclick="setFilter('news',this)">📰 Новости</div>
+							<div class="filter-chip" onclick="setFilter('achievement',this)">🏆 Достижения</div>
+							<div class="filter-chip" onclick="setFilter('cert',this)">📜 Сертификаты</div>
+							<div class="filter-chip" onclick="setFilter('research',this)">🔬 Исследования</div>
+							<div class="filter-chip" onclick="setFilter('manual',this)">📖 Пособия</div>
+							<div class="filter-chip" onclick="setFilter('coursework',this)">📝 Курсовые</div>
+							<div class="filter-chip" onclick="setFilter('mobility',this)">✈️ Мобильность</div>
+							<div class="filter-chip" onclick="setFilter('curator',this)">👥 Кураторство</div>
+							<div class="filter-chip" onclick="setFilter('workload',this)">📊 Нагрузка</div>
+							<div class="filter-chip" onclick="setFilter('info',this)">👤 Сведения</div>
+						</div>
+					</div>
+					<div class="side-card" id="section-teachers-list">
+						<div class="side-title">Преподаватели</div>
+						<div id="sidebar-teachers"></div>
+					</div>
+					<div class="side-card">
+						<div class="side-title">Группы</div>
+						<div id="sidebar-groups"></div>
+					</div>
+				</div>
+
+				<!-- CENTER: FEED -->
+				<div id="section-feed">
+					<div class="section-head">
+						<div>
+							<div class="section-title">Лента публикаций</div>
+							<div class="section-sub" id="feed-count">Загрузка...</div>
+						</div>
+					</div>
+					<div class="feed-wrap" id="feed-wrap"></div>
+				</div>
+
+				<!-- RIGHT: TEACHERS GRID -->
+				<div id="section-teachers">
+					<div class="side-card">
+						<div class="side-title">Последние публикации</div>
+						<div id="recent-activity"></div>
+					</div>
+					<div class="side-card" style="margin-top:0">
+						<div class="side-title">Статистика разделов</div>
+						<div id="section-stats"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ============================================================
+     PAGE: TEACHER PUBLIC PROFILE
+============================================================ -->
+	<div class="page" id="page-teacher">
+		<nav>
+			<div class="nav-logo" onclick="goHome()">
+				<div class="nav-logo-icon">АС</div>
+				<div>
+					<div class="nav-logo-text">АССОИУ</div>
+				</div>
+			</div>
+			<div class="nav-spacer"></div>
+			<button class="btn-nav primary" onclick="goPage('login')">Войти</button>
+		</nav>
+		<div class="prof-hero">
+			<div class="container">
+				<button class="back-btn" onclick="goHome()">← Назад к ленте</button>
+				<div style="display:flex;align-items:flex-start;gap:20px" id="pub-profile-head"></div>
+			</div>
+		</div>
+		<div class="profile-tabs" id="pub-tabs">
+			<button class="tab-btn active" onclick="switchPubTab('news')">Новости</button>
+			<button class="tab-btn" onclick="switchPubTab('achievement')">Достижения</button>
+			<button class="tab-btn" onclick="switchPubTab('cert')">Сертификаты</button>
+			<button class="tab-btn" onclick="switchPubTab('research')">Исследования</button>
+			<button class="tab-btn" onclick="switchPubTab('manual')">Пособия</button>
+			<button class="tab-btn" onclick="switchPubTab('coursework')">Курсовые</button>
+			<button class="tab-btn" onclick="switchPubTab('mobility')">Мобильность</button>
+			<button class="tab-btn" onclick="switchPubTab('curator')">Кураторство</button>
+			<button class="tab-btn" onclick="switchPubTab('workload')">Нагрузка</button>
+			<button class="tab-btn" onclick="switchPubTab('info')">Сведения</button>
+		</div>
+		<div class="container">
+			<div class="tab-content active" id="pub-tab-news"></div>
+			<div class="tab-content" id="pub-tab-achievement"></div>
+			<div class="tab-content" id="pub-tab-cert"></div>
+			<div class="tab-content" id="pub-tab-research"></div>
+			<div class="tab-content" id="pub-tab-manual"></div>
+			<div class="tab-content" id="pub-tab-coursework"></div>
+			<div class="tab-content" id="pub-tab-mobility"></div>
+			<div class="tab-content" id="pub-tab-curator"></div>
+			<div class="tab-content" id="pub-tab-workload"></div>
+			<div class="tab-content" id="pub-tab-info"></div>
+		</div>
+	</div>
+
+	<!-- ============================================================
+     PAGE: LOGIN
+============================================================ -->
+	<div class="page" id="page-login">
+		<div class="login-wrap">
+			<div class="login-card">
+				<div class="login-logo-big">АС</div>
+				<div class="login-title">Добро пожаловать</div>
+				<div class="login-sub">Портал преподавателей АССОИУ</div>
+				<div class="login-error" id="login-error">Неверный логин или пароль</div>
+				<div class="form-group"><label class="form-label">Логин</label><input class="form-input" id="l-user" type="text"
+						placeholder="Введите логин"></div>
+				<div class="form-group"><label class="form-label">Пароль</label><input class="form-input" id="l-pass"
+						type="password" placeholder="Введите пароль"></div>
+				<button class="btn-full" onclick="doLogin()">Войти в систему</button>
+				<button class="back-link" onclick="goHome()">← Вернуться на главную</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- ============================================================
+     PAGE: CABINET (TEACHER/CURATOR/DIRECTOR)
+============================================================ -->
+	<div class="page" id="page-cabinet">
+		<nav>
+			<div class="nav-logo" onclick="goHome()">
+				<div class="nav-logo-icon">АС</div>
+				<div>
+					<div class="nav-logo-text">АССОИУ</div>
+				</div>
+			</div>
+			<div class="nav-spacer"></div>
+			<div class="nav-user">
+				<div class="avatar av-blue" id="cab-av">?</div>
+				<div>
+					<div id="cab-uname" style="font-weight:500;font-size:13px"></div>
+					<div class="nav-user-role" id="cab-role-label"></div>
+				</div>
+			</div>
+			<button class="btn-nav" onclick="doLogout()">Выйти</button>
+		</nav>
+		<div class="cabinet-layout">
+			<div class="sidebar" id="cab-sidebar">
+				<div class="sidebar-section">Кабинет</div>
+				<div class="sidebar-item active" onclick="switchCab('profile')"><span class="si-icon">👤</span> Мой профиль
+				</div>
+				<div class="sidebar-item" onclick="switchCab('news')"><span class="si-icon">📰</span> Новости</div>
+				<div class="sidebar-section">Разделы</div>
+				<div class="sidebar-item" onclick="switchCab('achievement')"><span class="si-icon">🏆</span> Достижения
+					студентов</div>
+				<div class="sidebar-item" onclick="switchCab('cert')"><span class="si-icon">📜</span> Сертификаты</div>
+				<div class="sidebar-item" onclick="switchCab('research')"><span class="si-icon">🔬</span> Научные исследования
+				</div>
+				<div class="sidebar-item" onclick="switchCab('manual')"><span class="si-icon">📖</span> Учебно-методич. пособия
+				</div>
+				<div class="sidebar-item" onclick="switchCab('coursework')"><span class="si-icon">📝</span> Темы курсовых работ
+				</div>
+				<div class="sidebar-item" onclick="switchCab('mobility')"><span class="si-icon">✈️</span> Мобильность преп.
+				</div>
+				<div class="sidebar-item" id="si-curator" onclick="switchCab('curator')" style="display:none"><span
+						class="si-icon">👥</span> Кураторская работа</div>
+				<div class="sidebar-item" onclick="switchCab('workload')"><span class="si-icon">📊</span> Учебная нагрузка</div>
+				<div class="sidebar-item" onclick="switchCab('info')"><span class="si-icon">📋</span> Сведения о преп.</div>
+			</div>
+			<div class="cab-main">
+				<!-- PROFILE -->
+				<div class="cab-section active" id="cab-profile">
+					<div class="cab-title">Мой профиль</div>
+					<div class="cab-sub">Информация отображается на публичной странице</div>
+					<div class="add-form">
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">ФИО</label><input class="form-input" id="p-name"
+									placeholder="Иванова Мария Петровна"></div>
+							<div class="form-group"><label class="form-label">Предмет / должность</label><input class="form-input"
+									id="p-subject" placeholder="Информатика"></div>
+						</div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Юзернейм</label><input class="form-input"
+									id="p-username" placeholder="ivanova_m"></div>
+							<div class="form-group"><label class="form-label">Стаж работы</label><input class="form-input" id="p-exp"
+									placeholder="10 лет"></div>
+						</div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Степень / категория</label><input class="form-input"
+									id="p-degree" placeholder="Магистр, высшая кат."></div>
+							<div class="form-group"><label class="form-label">Контакт (email)</label><input class="form-input"
+									id="p-contact" placeholder="ivanova@assoiu.kg"></div>
+						</div>
+						<div class="form-group"><label class="form-label">О себе</label><textarea class="form-textarea" id="p-bio"
+								placeholder="Краткое описание..."></textarea></div>
+						<button class="btn-add" onclick="saveProfile()">Сохранить профиль</button>
+					</div>
+					<div id="cur-group-info" style="display:none">
+						<div class="add-form" style="background:var(--green-bg);border-color:#a8d5bc">
+							<div class="add-form-title" style="color:var(--green)">👥 Ваша группа (куратор)</div>
+							<div id="curator-group-display"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- NEWS -->
+				<div class="cab-section" id="cab-news">
+					<div class="cab-title">Новости</div>
+					<div class="cab-sub">Публикуются в общей ленте</div>
+					<div class="add-form">
+						<div class="add-form-title">Добавить новость</div>
+						<div class="form-group"><label class="form-label">Заголовок</label><input class="form-input" id="n-title"
+								placeholder="Заголовок новости"></div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Подзаголовок</label><input class="form-input"
+									id="n-subtitle" placeholder="Краткое описание"></div>
+							<div id="n-group-row" class="form-group" style="display:none"><label class="form-label">Тег
+									группы</label><input class="form-input" id="n-group-tag" placeholder="@assoiu2-23" readonly></div>
+						</div>
+						<div class="form-group"><label class="form-label">Содержание</label><textarea class="form-textarea"
+								id="n-body" style="min-height:100px" placeholder="Текст новости..."></textarea></div>
+						<button class="btn-add" onclick="addPost('news')">Опубликовать</button>
+					</div>
+					<div id="list-news"></div>
+				</div>
+
+				<!-- ACHIEVEMENT -->
+				<div class="cab-section" id="cab-achievement">
+					<div class="cab-title">Достижения студентов</div>
+					<div class="cab-sub">Победы в олимпиадах, конкурсах, соревнованиях</div>
+					<div class="add-form">
+						<div class="add-form-title">Добавить достижение</div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">ФИО студента</label><input class="form-input"
+									id="a-student" placeholder="Асанов Тимур"></div>
+							<div class="form-group"><label class="form-label">Группа студента</label><input class="form-input"
+									id="a-group" placeholder="ИС-22-1"></div>
+						</div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Название достижения</label><input class="form-input"
+									id="a-name" placeholder="1 место, олимпиада по математике"></div>
+							<div class="form-group"><label class="form-label">Мероприятие / организация</label><input
+									class="form-input" id="a-org" placeholder="МОН КР, республиканский уровень"></div>
+						</div>
+						<div class="form-group"><label class="form-label">Описание</label><textarea class="form-textarea"
+								id="a-desc" placeholder="Подробности..."></textarea></div>
+						<button class="btn-add" onclick="addSectionItem('achievement')">Добавить</button>
+					</div>
+					<div id="list-achievement"></div>
+				</div>
+
+				<!-- CERT -->
+				<div class="cab-section" id="cab-cert">
+					<div class="cab-title">Сертификаты</div>
+					<div class="cab-sub">Сертификаты студентов и преподавателя</div>
+					<div class="add-form">
+						<div class="add-form-title">Добавить сертификат</div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Владелец (студент / препод.)</label><input
+									class="form-input" id="c-owner" placeholder="Петрова Айгуль / Я"></div>
+							<div class="form-group"><label class="form-label">Название сертификата</label><input class="form-input"
+									id="c-name" placeholder="Python Basics — Coursera"></div>
+						</div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Организация</label><input class="form-input" id="c-org"
+									placeholder="Coursera / Google / МОН КР"></div>
+							<div class="form-group"><label class="form-label">Дата</label><input class="form-input" id="c-date"
+									type="month"></div>
+						</div>
+						<div class="form-group"><label class="form-label">Описание (необязательно)</label><textarea
+								class="form-textarea" id="c-desc" placeholder="Тема, уровень, достижение..."></textarea></div>
+						<button class="btn-add" onclick="addSectionItem('cert')">Добавить</button>
+					</div>
+					<div id="list-cert"></div>
+				</div>
+
+				<!-- RESEARCH -->
+				<div class="cab-section" id="cab-research">
+					<div class="cab-title">Научные исследования</div>
+					<div class="cab-sub">Статьи, публикации, гранты, конференции</div>
+					<div class="add-form">
+						<div class="add-form-title">Добавить исследование</div>
+						<div class="form-group"><label class="form-label">Тема / название работы</label><input class="form-input"
+								id="r-title" placeholder="Применение ИИ в образовании"></div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Тип</label>
+								<select class="form-select" id="r-type">
+									<option>Научная статья</option>
+									<option>Конференция</option>
+									<option>Грант</option>
+									<option>Монография</option>
+									<option>Патент</option>
+								</select>
+							</div>
+							<div class="form-group"><label class="form-label">Год / дата</label><input class="form-input" id="r-year"
+									placeholder="2025"></div>
+						</div>
+						<div class="form-group"><label class="form-label">Издание / организация</label><input class="form-input"
+								id="r-org" placeholder="Журнал «Вестник науки»"></div>
+						<div class="form-group"><label class="form-label">Аннотация</label><textarea class="form-textarea"
+								id="r-desc" placeholder="Краткое описание исследования..."></textarea></div>
+						<button class="btn-add" onclick="addSectionItem('research')">Добавить</button>
+					</div>
+					<div id="list-research"></div>
+				</div>
+
+				<!-- MANUAL -->
+				<div class="cab-section" id="cab-manual">
+					<div class="cab-title">Учебно-методические пособия</div>
+					<div class="cab-sub">Разработанные методические материалы</div>
+					<div class="add-form">
+						<div class="add-form-title">Добавить пособие</div>
+						<div class="form-group"><label class="form-label">Название пособия</label><input class="form-input"
+								id="m-title" placeholder="Методическое пособие по Python"></div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Дисциплина</label><input class="form-input"
+									id="m-subject" placeholder="Информатика / Алгебра..."></div>
+							<div class="form-group"><label class="form-label">Год разработки</label><input class="form-input"
+									id="m-year" placeholder="2025"></div>
+						</div>
+						<div class="form-group"><label class="form-label">Описание</label><textarea class="form-textarea"
+								id="m-desc" placeholder="Для кого предназначено, что охватывает..."></textarea></div>
+						<button class="btn-add" onclick="addSectionItem('manual')">Добавить</button>
+					</div>
+					<div id="list-manual"></div>
+				</div>
+
+				<!-- COURSEWORK -->
+				<div class="cab-section" id="cab-coursework">
+					<div class="cab-title">Темы курсовых работ</div>
+					<div class="cab-sub">Темы студентов и их оценки</div>
+					<div class="add-form">
+						<div class="add-form-title">Добавить курсовую</div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">ФИО студента</label><input class="form-input"
+									id="cw-student" placeholder="Жакыпов Данияр"></div>
+							<div class="form-group"><label class="form-label">Группа</label><input class="form-input" id="cw-group"
+									placeholder="ИС-22-1"></div>
+						</div>
+						<div class="form-group"><label class="form-label">Тема курсовой работы</label><input class="form-input"
+								id="cw-title" placeholder="Разработка мобильного приложения..."></div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Оценка</label>
+								<select class="form-select" id="cw-grade">
+									<option value="Отлично">Отлично</option>
+									<option value="Хорошо">Хорошо</option>
+									<option value="Удовлетворительно">Удовлетворительно</option>
+								</select>
+							</div>
+							<div class="form-group"><label class="form-label">Год</label><input class="form-input" id="cw-year"
+									placeholder="2025"></div>
+						</div>
+						<div class="form-group"><label class="form-label">Аннотация</label><textarea class="form-textarea"
+								id="cw-desc" placeholder="Описание работы..."></textarea></div>
+						<button class="btn-add" onclick="addSectionItem('coursework')">Добавить</button>
+					</div>
+					<div id="list-coursework"></div>
+				</div>
+
+				<!-- MOBILITY -->
+				<div class="cab-section" id="cab-mobility">
+					<div class="cab-title">Мобильность преподавателей</div>
+					<div class="cab-sub">Стажировки, обмены, командировки, курсы повышения квалификации</div>
+					<div class="add-form">
+						<div class="add-form-title">Добавить запись</div>
+						<div class="form-group"><label class="form-label">Название программы / мероприятия</label><input
+								class="form-input" id="mob-title" placeholder="Стажировка в НГУ Новосибирск"></div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Тип</label>
+								<select class="form-select" id="mob-type">
+									<option>Стажировка</option>
+									<option>Курсы повышения квалификации</option>
+									<option>Международный обмен</option>
+									<option>Конференция</option>
+									<option>Семинар</option>
+								</select>
+							</div>
+							<div class="form-group"><label class="form-label">Страна / город</label><input class="form-input"
+									id="mob-place" placeholder="Бишкек / Москва / Берлин"></div>
+						</div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Дата начала</label><input class="form-input"
+									id="mob-from" type="month"></div>
+							<div class="form-group"><label class="form-label">Дата окончания</label><input class="form-input"
+									id="mob-to" type="month"></div>
+						</div>
+						<div class="form-group"><label class="form-label">Описание / результаты</label><textarea
+								class="form-textarea" id="mob-desc" placeholder="Что изучено, достигнутые результаты..."></textarea>
+						</div>
+						<button class="btn-add" onclick="addSectionItem('mobility')">Добавить</button>
+					</div>
+					<div id="list-mobility"></div>
+				</div>
+
+				<!-- CURATOR -->
+				<div class="cab-section" id="cab-curator">
+					<div class="cab-title">Кураторская работа</div>
+					<div class="cab-sub" id="curator-group-sub">Публикации о вашей группе</div>
+					<div class="add-form">
+						<div class="add-form-title">Добавить запись о группе</div>
+						<div class="form-group"><label class="form-label">Тема / событие</label><input class="form-input"
+								id="cur-title" placeholder="Собрание группы, мероприятие, итоги..."></div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Тип записи</label>
+								<select class="form-select" id="cur-type">
+									<option>Собрание группы</option>
+									<option>Воспитательное мероприятие</option>
+									<option>Успеваемость</option>
+									<option>Посещаемость</option>
+									<option>Достижение группы</option>
+									<option>Объявление</option>
+								</select>
+							</div>
+							<div class="form-group"><label class="form-label">Дата</label><input class="form-input" id="cur-date"
+									type="date"></div>
+						</div>
+						<div class="form-group"><label class="form-label">Описание</label><textarea class="form-textarea"
+								id="cur-desc" placeholder="Подробности..."></textarea></div>
+						<button class="btn-add" onclick="addSectionItem('curator')">Добавить</button>
+					</div>
+					<div id="list-curator"></div>
+				</div>
+
+				<!-- WORKLOAD -->
+				<div class="cab-section" id="cab-workload">
+					<div class="cab-title">Учебная нагрузка</div>
+					<div class="cab-sub">Дисциплины, часы, семестры</div>
+					<div class="add-form">
+						<div class="add-form-title">Добавить дисциплину</div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Дисциплина</label><input class="form-input" id="wl-subj"
+									placeholder="Математика / Информатика..."></div>
+							<div class="form-group"><label class="form-label">Группа</label><input class="form-input" id="wl-group"
+									placeholder="ИС-22-1"></div>
+						</div>
+						<div class="form-row-3">
+							<div class="form-group"><label class="form-label">Лекции (ч/нед)</label><input class="form-input"
+									id="wl-lec" type="number" placeholder="2"></div>
+							<div class="form-group"><label class="form-label">Практика (ч/нед)</label><input class="form-input"
+									id="wl-prac" type="number" placeholder="2"></div>
+							<div class="form-group"><label class="form-label">Семестр</label>
+								<select class="form-select" id="wl-sem">
+									<option>1 семестр</option>
+									<option>2 семестр</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group"><label class="form-label">Учебный год</label><input class="form-input" id="wl-year"
+								placeholder="2024-2025"></div>
+						<button class="btn-add" onclick="addSectionItem('workload')">Добавить</button>
+					</div>
+					<div id="list-workload"></div>
+				</div>
+
+				<!-- INFO -->
+				<div class="cab-section" id="cab-info">
+					<div class="cab-title">Сведения о преподавателе</div>
+					<div class="cab-sub">Публичная информация, отображается на вашей странице</div>
+					<div class="add-form">
+						<div class="add-form-title">Добавить сведения</div>
+						<div class="form-group"><label class="form-label">Раздел</label><input class="form-input" id="inf-section"
+								placeholder="Образование / Публикации / Награды..."></div>
+						<div class="form-group"><label class="form-label">Содержание</label><textarea class="form-textarea"
+								id="inf-body" style="min-height:100px" placeholder="Подробная информация..."></textarea></div>
+						<div class="form-group"><label class="form-label">Год (необязательно)</label><input class="form-input"
+								id="inf-year" placeholder="2023"></div>
+						<button class="btn-add" onclick="addSectionItem('info')">Добавить</button>
+					</div>
+					<div id="list-info"></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- ============================================================
+     PAGE: ADMIN
+============================================================ -->
+	<div class="page" id="page-admin">
+		<nav style="background:#1a1a2e;border-color:#2d2d4e">
+			<div class="nav-logo" onclick="goHome()">
+				<div class="nav-logo-icon" style="background:var(--accent2)">АС</div>
+				<div>
+					<div class="nav-logo-text" style="color:#fff">АССОИУ</div>
+					<div class="nav-logo-sub">Административная панель</div>
+				</div>
+			</div>
+			<div class="nav-spacer"></div>
+			<div class="nav-user" style="color:rgba(255,255,255,.7)">
+				<div class="avatar" style="background:var(--accent2);color:#fff">A</div>
+				<div>
+					<div style="color:#fff;font-weight:500;font-size:13px">Администратор</div>
+					<div class="nav-user-role">Admin</div>
+				</div>
+			</div>
+			<button class="btn-nav" style="color:rgba(255,255,255,.7);border-color:rgba(255,255,255,.2)"
+				onclick="doLogout()">Выйти</button>
+		</nav>
+		<div class="admin-layout">
+			<div class="admin-nav sidebar">
+				<div class="sidebar-section">Управление</div>
+				<div class="sidebar-item active" onclick="switchAdmin('dashboard')"><span class="si-icon">📊</span> Дашборд
+				</div>
+				<div class="sidebar-item" onclick="switchAdmin('users')"><span class="si-icon">👥</span> Пользователи</div>
+				<div class="sidebar-item" onclick="switchAdmin('groups')"><span class="si-icon">🎓</span> Группы</div>
+				<div class="sidebar-item" onclick="switchAdmin('create')"><span class="si-icon">➕</span> Создать аккаунт</div>
+				<div class="sidebar-section">Контент</div>
+				<div class="sidebar-item" onclick="switchAdmin('feed')"><span class="si-icon">📰</span> Все публикации</div>
+				<div class="sidebar-item" onclick="switchAdmin('sections')"><span class="si-icon">📁</span> Разделы</div>
+			</div>
+			<div class="admin-main">
+
+				<!-- DASHBOARD -->
+				<div class="admin-section active" id="adm-dashboard">
+					<div class="cab-title">Дашборд</div>
+					<div class="cab-sub">Общая статистика портала</div>
+					<div class="stat-grid" id="adm-stats"></div>
+					<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+						<div class="card card-pad">
+							<div class="section-head">
+								<div class="section-title" style="font-size:14px">Последние регистрации</div>
+							</div>
+							<div id="adm-recent-users"></div>
+						</div>
+						<div class="card card-pad">
+							<div class="section-head">
+								<div class="section-title" style="font-size:14px">Активность по разделам</div>
+							</div>
+							<div id="adm-section-activity"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- USERS -->
+				<div class="admin-section" id="adm-users">
+					<div class="cab-title">Пользователи</div>
+					<div class="cab-sub">Управление аккаунтами преподавателей</div>
+					<div style="display:grid;grid-template-columns:340px 1fr;gap:20px">
+						<div>
+							<div style="margin-bottom:12px"><input class="form-input" id="user-search" oninput="filterAdminUsers()"
+									placeholder="🔍 Поиск пользователя..."></div>
+							<div id="adm-users-list"></div>
+						</div>
+						<div id="adm-user-detail">
+							<div class="empty-state">← Выберите пользователя</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- GROUPS -->
+				<div class="admin-section" id="adm-groups">
+					<div class="cab-title">Группы</div>
+					<div class="cab-sub">Создание и управление учебными группами</div>
+					<div class="add-form" style="max-width:500px">
+						<div class="add-form-title">Создать группу</div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Название группы</label><input class="form-input"
+									id="g-name" placeholder="ИС-23-1"></div>
+							<div class="form-group"><label class="form-label">Тег (авто)</label><input class="form-input" id="g-tag"
+									placeholder="@is-23-1" readonly></div>
+						</div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Специальность</label><input class="form-input"
+									id="g-spec" placeholder="Информационные системы"></div>
+							<div class="form-group"><label class="form-label">Год набора</label><input class="form-input" id="g-year"
+									placeholder="2023"></div>
+						</div>
+						<div class="form-group"><label class="form-label">Куратор</label>
+							<select class="form-select" id="g-curator">
+								<option value="">— Не назначен —</option>
+							</select>
+						</div>
+						<button class="btn-add" onclick="createGroup()">Создать группу</button>
+					</div>
+					<div id="adm-groups-list"></div>
+				</div>
+
+				<!-- CREATE USER -->
+				<div class="admin-section" id="adm-create">
+					<div class="cab-title">Создать аккаунт</div>
+					<div class="cab-sub">Новый преподаватель получит доступ к кабинету</div>
+					<div class="add-form" style="max-width:520px">
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">ФИО</label><input class="form-input" id="nu-name"
+									placeholder="Иванова Мария Петровна"></div>
+							<div class="form-group"><label class="form-label">Предмет</label><input class="form-input" id="nu-subject"
+									placeholder="Математика"></div>
+						</div>
+						<div class="form-row">
+							<div class="form-group"><label class="form-label">Логин</label><input class="form-input" id="nu-login"
+									placeholder="ivanova_m"></div>
+							<div class="form-group"><label class="form-label">Пароль</label><input class="form-input" id="nu-pass"
+									type="text" placeholder="Пароль"></div>
+						</div>
+						<div class="form-group"><label class="form-label">Роль</label>
+							<select class="form-select" id="nu-role" onchange="onRoleChange()">
+								<option value="teacher">Преподаватель</option>
+								<option value="curator">Куратор группы</option>
+								<option value="director">Директор</option>
+							</select>
+						</div>
+						<div class="form-group" id="nu-group-row" style="display:none"><label class="form-label">Группа (для
+								куратора)</label>
+							<select class="form-select" id="nu-group">
+								<option value="">— Выберите группу —</option>
+							</select>
+						</div>
+						<button class="btn-add" style="width:100%;padding:11px" onclick="createUser()">Создать аккаунт</button>
+					</div>
+				</div>
+
+				<!-- ALL POSTS -->
+				<div class="admin-section" id="adm-feed">
+					<div class="cab-title">Все публикации</div>
+					<div class="cab-sub">Модерация ленты</div>
+					<div id="adm-feed-list"></div>
+				</div>
+
+				<!-- SECTIONS -->
+				<div class="admin-section" id="adm-sections">
+					<div class="cab-title">Разделы преподавателей</div>
+					<div class="cab-sub">Суммарный контент по всем разделам</div>
+					<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px" id="adm-sections-grid"></div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script>
+		/* ===================== DATA STORE ===================== */
+		const CAT_LABELS = {
+			news: 'Новости', achievement: 'Достижения', cert: 'Сертификаты',
+			research: 'Исследования', manual: 'Пособия', coursework: 'Курсовые',
+			mobility: 'Мобильность', curator: 'Кураторство', workload: 'Нагрузка', info: 'Сведения'
+		}
+		const CAT_CLASS = {
+			news: 'cat-news', achievement: 'cat-achievement', cert: 'cat-cert',
+			research: 'cat-research', manual: 'cat-manual', coursework: 'cat-coursework',
+			mobility: 'cat-mobility', curator: 'cat-curator', workload: 'cat-workload', info: 'cat-info'
+		}
+		const CAT_ICON = {
+			news: '📰', achievement: '🏆', cert: '📜', research: '🔬',
+			manual: '📖', coursework: '📝', mobility: '✈️', curator: '👥', workload: '📊', info: '👤'
+		}
+		const ROLE_LABEL = { director: 'Директор', teacher: 'Преподаватель', curator: 'Куратор группы' }
+		const ROLE_CLASS = { director: 'rt-director', teacher: 'rt-teacher', curator: 'rt-curator' }
+		const AV_COLORS = ['av-blue', 'av-green', 'av-gold', 'av-purple']
+
+		const DB = {
+			users: [
+				{
+					id: 1, login: 'nurlan_s', password: 'Teach2024', name: 'Сейткали Нурлан Бекович', username: 'nurlan_s', subject: 'Математика', role: 'teacher', exp: '12 лет', degree: 'Магистр, высшая кат.', contact: 'seitkali@assoiu.kg', bio: 'Преподаю математику с акцентом на олимпиадную подготовку. Методист STEM.', groupId: null,
+					posts: {
+						news: [{ title: 'Открытый урок по теорверу', subtitle: 'Разбирали задачи ЕНТ нового формата', body: 'Провёл открытый урок для коллег. Разбирали задачи ЕНТ нового формата по теории вероятностей.', date: '15 мая 2025' }],
+						achievement: [{ student: 'Асанов Тимур', group: 'ИС-22-1', name: '1 место, республиканская олимпиада', org: 'МОН КР', desc: 'Первое место по математике на республиканском уровне.' }],
+						cert: [{ owner: 'Асанов Тимур', name: 'Сертификат «Олимпиадная математика»', org: 'МОН КР', date: '2025-03', desc: '' }],
+						research: [{ title: 'Методы геймификации в обучении математике', type: 'Научная статья', year: '2024', org: 'Вестник образования КР', desc: 'Исследование эффективности игровых методов.' }],
+						manual: [{ title: 'Пособие по теории вероятностей для СПО', subject: 'Математика', year: '2024', desc: 'Разработано для студентов 2 курса.' }],
+						coursework: [{ student: 'Мамытова Зарина', group: 'ИС-22-1', title: 'Применение мат. статистики в анализе данных', grade: 'Отлично', year: '2025', desc: 'Исследование методов статистического анализа.' }],
+						mobility: [{ title: 'Курсы повышения квалификации — STEM-педагогика', type: 'Курсы повышения квалификации', place: 'Бишкек', from: '2024-09', to: '2024-10', desc: 'Сертификат STEM-методист.' }],
+						curator: [],
+						workload: [{ subj: 'Математика', group: 'ИС-22-1', lec: '2', prac: '2', sem: '1 семестр', year: '2024-2025' }, { subj: 'Статистика', group: 'ИС-23-1', lec: '1', prac: '2', sem: '2 семестр', year: '2024-2025' }],
+						info: [{ section: 'Образование', body: 'КГУ им. И. Арабаева, математический факультет, 2012.', year: '2012' }, { section: 'Награды', body: 'Почётная грамота МОН КР, 2023.', year: '2023' }]
+					}
+				},
+				{
+					id: 2, login: 'gulsara_a', password: 'Tech456', name: 'Абдрахманова Гулсара Сейтовна', username: 'gulsara_a', subject: 'Информатика', role: 'curator', exp: '8 лет', degree: 'Бакалавр, 1 категория', contact: 'abdrakhmanova@assoiu.kg', bio: 'Веду информатику, Python, основы ИИ. Организатор школьного хакатона.', groupId: 1,
+					posts: {
+						news: [{ title: 'Хакатон 2025 — итоги!', subtitle: '12 команд, 48 часов', body: 'Провели внутриколледжный хакатон. Лучшие проекты представят на городском уровне.', date: '20 мая 2025' }],
+						achievement: [{ student: 'Карымшаков Айбек', group: 'ИС-23-1', name: 'Победитель хакатона', org: 'АССОИУ', desc: 'Лучший проект — AI-чатбот для студентов' }],
+						cert: [{ owner: 'Карымшаков Айбек', name: 'Google Certified Educator Level 1', org: 'Google', date: '2025-02', desc: '' }],
+						research: [],
+						manual: [{ title: 'Введение в Python для начинающих', subject: 'Информатика', year: '2025', desc: 'Факультативный курс для 1-2 курса.' }],
+						coursework: [{ student: 'Усупова Назира', group: 'ИС-23-1', title: 'Классификация изображений с помощью CNN', grade: 'Отлично', year: '2025', desc: 'Нейросеть MNIST с точностью 98.2%.' }],
+						mobility: [{ title: 'Международный семинар по EdTech', type: 'Семинар', place: 'Алматы', from: '2025-03', to: '2025-03', desc: 'Обмен опытом по цифровизации образования.' }],
+						curator: [{ title: 'Итоги 1 семестра группы ИС-23-1', type: 'Успеваемость', date: '2025-01-25', desc: 'Средний балл группы 4.1. Отличников — 4 студента. Плановые встречи завершены.' }, { title: 'Выезд группы на природу', type: 'Воспитательное мероприятие', date: '2025-05-01', desc: 'Провели совместный выезд, укрепили командный дух.' }],
+						workload: [{ subj: 'Информатика', group: 'ИС-23-1', lec: '2', prac: '4', sem: '1 семестр', year: '2024-2025' }, { subj: 'Основы ИИ', group: 'ИС-22-1', lec: '1', prac: '2', sem: '2 семестр', year: '2024-2025' }],
+						info: [{ section: 'Образование', body: 'КГТУ им. Раззакова, специальность «Информатика», 2017.', year: '2017' }]
+					}
+				},
+				{
+					id: 3, login: 'azamat_d', password: 'Bio789', name: 'Джаксыбеков Азамат Кубатович', username: 'azamat_d', subject: 'Биология', role: 'teacher', exp: '20 лет', degree: 'Кандидат наук, высшая кат.', contact: 'dzhaksybekov@assoiu.kg', bio: 'Опытный педагог, автор методических пособий. Руководитель экологического клуба.', groupId: null,
+					posts: {
+						news: [{ title: 'Экспедиция в Ала-Арчу', subtitle: 'Экологический клуб', body: 'Провели экологическую экспедицию с учениками 10 класса. Собраны образцы флоры.', date: '10 мая 2025' }],
+						achievement: [{ student: 'Осмонова Айнагуль', group: 'МД-22-1', name: '3 место, республиканская олимпиада по биологии', org: 'МОН КР', desc: '' }],
+						cert: [],
+						research: [{ title: 'Влияние урбанизации на биоразнообразие Чуйской долины', type: 'Монография', year: '2023', org: 'АССОИУ', desc: 'Полевое исследование 2019-2023 гг.' }],
+						manual: [{ title: 'Полевой определитель растений Кыргызстана', subject: 'Биология', year: '2022', desc: 'Для студентов и школьников.' }],
+						coursework: [{ student: 'Токтоналиев Санжар', group: 'МД-22-1', title: 'Влияние загрязнений на флору Иссык-Куля', grade: 'Отлично', year: '2025', desc: 'Полевое исследование с анализом данных.' }],
+						mobility: [],
+						curator: [],
+						workload: [{ subj: 'Биология', group: 'МД-22-1', lec: '2', prac: '2', sem: '1 семестр', year: '2024-2025' }],
+						info: [{ section: 'Публикации', body: '12 научных статей, 2 монографии.', year: '2024' }, { section: 'Награды', body: 'Заслуженный учитель КР, 2020.', year: '2020' }]
+					}
+				}
+			],
+			groups: [
+				{ id: 1, name: 'ИС-23-1', tag: '@is-23-1', spec: 'Информационные системы', year: '2023', curatorId: 2 },
+				{ id: 2, name: 'МД-22-1', tag: '@md-22-1', spec: 'Менеджмент и документоведение', year: '2022', curatorId: null },
+			],
+			admin: { login: 'Admin123', password: 'Admin123' }
+		}
+
+		let currentUser = null
+		let currentFilter = 'all'
+		let viewingTeacherId = null
+
+		/* ===================== ROUTING ===================== */
+		function goPage(p) {
+			document.querySelectorAll('.page').forEach(x => x.classList.remove('active'))
+			document.getElementById('page-' + p).classList.add('active')
+			window.scrollTo(0, 0)
+		}
+		function goHome() {
+			goPage('home')
+			renderHome()
+		}
+
+		/* ===================== HELPERS ===================== */
+		function initials(name) {
+			const p = name.trim().split(' ')
+			return (p[0][0] + (p[1] ? p[1][0] : '')).toUpperCase()
+		}
+		function today() {
+			return new Date().toLocaleDateString('ru-RU', { day: 'numeric', month: 'long', year: 'numeric' })
+		}
+		function avColor(id) { return AV_COLORS[id % AV_COLORS.length] }
+		function showToast(msg) {
+			const t = document.getElementById('toast'); t.textContent = msg; t.classList.add('show')
+			setTimeout(() => t.classList.remove('show'), 2800)
+		}
+		function allPosts() {
+			const arr = []
+			DB.users.forEach(u => {
+				Object.entries(u.posts).forEach(([cat, items]) => {
+					items.forEach(it => { arr.push({ ...it, cat, user: u }) })
+				})
+			})
+			return arr.sort(() => Math.random() - .5)
+		}
+
+		/* ===================== HOME ===================== */
+		function renderHome() {
+			// Stats
+			const posts = allPosts()
+			document.getElementById('stat-teachers').textContent = DB.users.length
+			document.getElementById('stat-posts').textContent = posts.length
+			document.getElementById('stat-groups').textContent = DB.groups.length
+
+			// Feed
+			renderFeed()
+
+			// Sidebar teachers
+			const st = document.getElementById('sidebar-teachers')
+			st.innerHTML = DB.users.map(u => `
+    <div class="teacher-mini" onclick="openTeacher(${u.id})">
+      <div class="avatar ${avColor(u.id)}" style="width:36px;height:36px;font-size:13px">${initials(u.name)}</div>
+      <div><div class="tm-name">${u.name}</div><div class="tm-subject">${u.subject} · <span class="role-tag ${ROLE_CLASS[u.role]}" style="font-size:10px;padding:1px 7px">${ROLE_LABEL[u.role]}</span></div></div>
+    </div>
+  `).join('')
+
+			// Sidebar groups
+			const sg = document.getElementById('sidebar-groups')
+			sg.innerHTML = DB.groups.map(g => {
+				const cur = DB.users.find(u => u.id === g.curatorId)
+				return `<div style="padding:7px 0;border-bottom:1px solid var(--border2);font-size:13px">
+      <span class="group-tag">${g.tag}</span>
+      <span style="margin-left:8px;font-weight:500">${g.name}</span>
+      ${cur ? `<div style="font-size:11px;color:var(--text3);margin-top:2px">Куратор: ${cur.name}</div>` : ''}
+    </div>`
+			}).join('')
+
+			// Recent activity
+			const ra = document.getElementById('recent-activity')
+			const recent = allPosts().slice(0, 5)
+			ra.innerHTML = recent.map(p => `
+    <div style="display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--border2)">
+      <span style="font-size:16px">${CAT_ICON[p.cat]}</span>
+      <div>
+        <div style="font-size:12px;font-weight:500;color:var(--text)">${(p.title || '').substring(0, 30)}...</div>
+        <div style="font-size:11px;color:var(--text3)">${p.user.name.split(' ')[0]}</div>
+      </div>
+    </div>
+  `).join('')
+
+			// Section stats
+			const ss = document.getElementById('section-stats')
+			ss.innerHTML = Object.entries(CAT_LABELS).map(([k, v]) => {
+				const cnt = DB.users.reduce((a, u) => a + (u.posts[k] || []).length, 0)
+				return `<div style="display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border2);font-size:12px">
+      <span>${CAT_ICON[k]} ${v}</span>
+      <span style="font-weight:600;color:var(--accent)">${cnt}</span>
+    </div>`
+			}).join('')
+		}
+
+		function renderFeed() {
+			const q = document.getElementById('home-search').value.toLowerCase()
+			let posts = allPosts()
+			if (currentFilter !== 'all') posts = posts.filter(p => p.cat === currentFilter)
+			if (q) posts = posts.filter(p => (p.title || '').toLowerCase().includes(q) || (p.body || '').toLowerCase().includes(q) || p.user.name.toLowerCase().includes(q))
+			document.getElementById('feed-count').textContent = `${posts.length} публикаций`
+			const fw = document.getElementById('feed-wrap')
+			if (!posts.length) { fw.innerHTML = '<div class="empty-state">Публикаций не найдено</div>'; return }
+			fw.innerHTML = posts.map(p => renderPostCard(p)).join('')
+		}
+
+		function renderPostCard(p) {
+			const u = p.user
+			const g = u.groupId ? DB.groups.find(x => x.id === u.groupId) : null
+			const gtag = g ? ` <span class="group-tag" style="font-size:11px;padding:2px 7px">${g.tag}</span>` : ''
+			const curator = u.role === 'curator' ? `<div style="font-size:12px;color:var(--text3);margin-top:2px">👥 Куратор группы ${g ? g.name : ''}</div>` : ''
+			return `
+  <div class="post" onclick="openTeacher(${u.id})">
+    <div class="post-head">
+      <div class="post-av ${avColor(u.id)}" style="background:var(--accent-light);color:var(--accent)">${initials(u.name)}</div>
+      <div class="post-meta">
+        <div class="post-author">${u.name} <span class="post-role-badge ${ROLE_CLASS[u.role]}">${ROLE_LABEL[u.role]}</span></div>
+        <div class="post-username">@${u.username}${gtag}</div>
+        ${curator}
+      </div>
+      <div class="post-date">${p.date || today()}</div>
+    </div>
+    <div><span class="post-cat-badge ${CAT_CLASS[p.cat]}">${CAT_ICON[p.cat]} ${CAT_LABELS[p.cat]}</span></div>
+    <div class="post-title">${p.title || p.section || p.subj || '—'}</div>
+    ${p.subtitle ? `<div style="font-size:13px;color:var(--text3);margin-bottom:6px">${p.subtitle}</div>` : ''}
+    <div class="post-body">${(p.body || p.desc || p.bio || '').substring(0, 180)}${(p.body || p.desc || '').length > 180 ? '...' : ''}</div>
+    ${p.student ? `<div style="margin-top:8px;font-size:12px;color:var(--text3)">👤 ${p.student}${p.group ? ' · ' + p.group : ''}</div>` : ''}
+    ${p.grade ? `<span class="grade-badge g-${p.grade === 'Отлично' ? 'excellent' : p.grade === 'Хорошо' ? 'good' : 'ok'}" style="margin-top:6px;display:inline-block">${p.grade}</span>` : ''}
+  </div>`
+		}
+
+		function setFilter(f, el) {
+			currentFilter = f
+			document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'))
+			el.classList.add('active')
+			renderFeed()
+		}
+		function filterFeed() { renderFeed() }
+		function scrollToFeed() { document.getElementById('section-feed').scrollIntoView({ behavior: 'smooth' }) }
+		function scrollToTeachers() { document.getElementById('sidebar-teachers').scrollIntoView({ behavior: 'smooth' }) }
+		function scrollToAbout() { document.getElementById('section-about').scrollIntoView({ behavior: 'smooth' }) }
+
+		/* ===================== PUBLIC TEACHER PROFILE ===================== */
+		function openTeacher(id) {
+			const u = DB.users.find(x => x.id === id)
+			viewingTeacherId = id
+			const g = u.groupId ? DB.groups.find(x => x.id === u.groupId) : null
+			document.getElementById('pub-profile-head').innerHTML = `
+    <div class="prof-av ${avColor(u.id)}" style="background:rgba(255,255,255,.15);color:#fff">${initials(u.name)}</div>
+    <div>
+      <div style="font-size:13px;opacity:.7;margin-bottom:6px">@${u.username}</div>
+      <div class="prof-name">${u.name}</div>
+      <div class="prof-role-tag">${ROLE_LABEL[u.role]} ${g ? '· Куратор ' + g.name : ''}</div>
+      <div style="font-size:13px;opacity:.7;margin-top:8px;max-width:520px;line-height:1.6">${u.subject} · ${u.exp} · ${u.degree}</div>
+      ${u.bio ? `<div style="font-size:13px;opacity:.65;margin-top:6px;max-width:520px;line-height:1.6">${u.bio}</div>` : ''}
+    </div>
+  `
+			renderPubTabs(u)
+			switchPubTab('news')
+			goPage('teacher')
+		}
+
+		function renderPubTabs(u) {
+			const tabs = ['news', 'achievement', 'cert', 'research', 'manual', 'coursework', 'mobility', 'curator', 'workload', 'info']
+			tabs.forEach(t => {
+				const el = document.getElementById('pub-tab-' + t)
+				const items = u.posts[t] || []
+				if (!items.length) { el.innerHTML = '<div class="empty-state">Нет данных в этом разделе</div>'; return }
+				if (t === 'news') el.innerHTML = items.map(it => `
+      <div class="item-card"><div style="font-size:11px;color:var(--text3);margin-bottom:4px">${it.date || today()}</div>
+      <div class="item-card-title">${it.title}</div>
+      ${it.subtitle ? `<div class="item-card-sub">${it.subtitle}</div>` : ''}
+      <div class="item-card-body">${it.body}</div></div>`).join('')
+				else if (t === 'achievement') el.innerHTML = `<div class="ach-grid">${items.map(it => `
+      <div class="ach-card"><div class="ach-icon">🏆</div>
+      <div class="ach-name">${it.name}</div>
+      <div class="ach-stu">👤 ${it.student} · ${it.group}</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:4px">${it.org}</div>
+      ${it.desc ? `<div class="item-card-body" style="margin-top:6px">${it.desc}</div>` : ''}</div>`).join('')}</div>`
+				else if (t === 'cert') el.innerHTML = items.map(it => `
+      <div class="item-card" style="display:flex;align-items:center;gap:14px">
+        <div style="font-size:28px">📜</div>
+        <div><div class="item-card-title">${it.name}</div>
+        <div class="item-card-sub">👤 ${it.owner} · ${it.org} · ${it.date}</div>
+        ${it.desc ? `<div class="item-card-body">${it.desc}</div>` : ''}</div></div>`).join('')
+				else if (t === 'research') el.innerHTML = items.map(it => `
+      <div class="item-card"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+      <div class="item-card-title">${it.title}</div><span class="badge" style="background:var(--purple-bg);color:var(--purple)">${it.type}</span></div>
+      <div class="item-card-sub">${it.org} · ${it.year}</div>
+      ${it.desc ? `<div class="item-card-body">${it.desc}</div>` : ''}</div>`).join('')
+				else if (t === 'manual') el.innerHTML = items.map(it => `
+      <div class="item-card"><div class="item-card-title">📖 ${it.title}</div>
+      <div class="item-card-sub">${it.subject} · ${it.year}</div>
+      ${it.desc ? `<div class="item-card-body">${it.desc}</div>` : ''}</div>`).join('')
+				else if (t === 'coursework') el.innerHTML = items.map(it => `
+      <div class="item-card"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+      <div class="item-card-title">${it.title}</div>
+      <span class="grade-badge g-${it.grade === 'Отлично' ? 'excellent' : it.grade === 'Хорошо' ? 'good' : 'ok'}">${it.grade}</span></div>
+      <div class="item-card-sub">👤 ${it.student} · ${it.group} · ${it.year}</div>
+      ${it.desc ? `<div class="item-card-body">${it.desc}</div>` : ''}</div>`).join('')
+				else if (t === 'mobility') el.innerHTML = items.map(it => `
+      <div class="item-card"><div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+      <span class="badge" style="background:var(--accent-light);color:var(--accent)">${it.type}</span>
+      <span class="item-card-sub">${it.place} · ${it.from}→${it.to}</span></div>
+      <div class="item-card-title">✈️ ${it.title}</div>
+      ${it.desc ? `<div class="item-card-body">${it.desc}</div>` : ''}</div>`).join('')
+				else if (t === 'curator') el.innerHTML = items.map(it => `
+      <div class="item-card"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+      <div class="item-card-title">${it.title}</div><span style="font-size:11px;color:var(--text3)">${it.date}</span></div>
+      <div class="item-card-sub">${it.type}</div>
+      ${it.desc ? `<div class="item-card-body">${it.desc}</div>` : ''}</div>`).join('')
+				else if (t === 'workload') el.innerHTML = `<div class="table-wrap"><table>
+      <tr><th>Дисциплина</th><th>Группа</th><th>Лекции</th><th>Практика</th><th>Семестр</th><th>Год</th></tr>
+      ${items.map(it => `<tr><td>${it.subj}</td><td>${it.group}</td><td>${it.lec} ч/нед</td><td>${it.prac} ч/нед</td><td>${it.sem}</td><td>${it.year}</td></tr>`).join('')}
+      </table></div>`
+				else if (t === 'info') el.innerHTML = items.map(it => `
+      <div class="item-card"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+      <div class="item-card-title">${it.section}</div>${it.year ? `<span style="font-size:11px;color:var(--text3)">${it.year}</span>` : ''}
+      </div><div class="item-card-body">${it.body}</div></div>`).join('')
+			})
+		}
+
+		function switchPubTab(name) {
+			const tabs = ['news', 'achievement', 'cert', 'research', 'manual', 'coursework', 'mobility', 'curator', 'workload', 'info']
+			document.querySelectorAll('.profile-tabs .tab-btn').forEach((b, i) => b.classList.toggle('active', tabs[i] === name))
+			document.querySelectorAll('[id^="pub-tab-"]').forEach(c => c.classList.remove('active'))
+			document.getElementById('pub-tab-' + name).classList.add('active')
+		}
+
+		/* ===================== LOGIN ===================== */
+		function doLogin() {
+			const u = document.getElementById('l-user').value.trim()
+			const p = document.getElementById('l-pass').value.trim()
+			const err = document.getElementById('login-error')
+			err.style.display = 'none'
+			if (u === DB.admin.login && p === DB.admin.password) {
+				currentUser = { role: 'admin' }
+				renderAdmin()
+				goPage('admin')
+				return
+			}
+			const t = DB.users.find(x => x.login === u && x.password === p)
+			if (t) {
+				currentUser = t
+				renderCabinet(t)
+				goPage('cabinet')
+				return
+			}
+			err.style.display = 'block'
+		}
+		function doLogout() { currentUser = null; document.getElementById('l-user').value = ''; document.getElementById('l-pass').value = ''; goHome(); showToast('Вы вышли из системы') }
+
+		/* ===================== CABINET ===================== */
+		function renderCabinet(u) {
+			document.getElementById('cab-av').textContent = initials(u.name)
+			document.getElementById('cab-uname').textContent = u.name
+			document.getElementById('cab-role-label').textContent = ROLE_LABEL[u.role]
+			document.getElementById('p-name').value = u.name
+			document.getElementById('p-subject').value = u.subject
+			document.getElementById('p-username').value = u.username
+			document.getElementById('p-exp').value = u.exp
+			document.getElementById('p-degree').value = u.degree
+			document.getElementById('p-contact').value = u.contact
+			document.getElementById('p-bio').value = u.bio || ''
+			const si = document.getElementById('si-curator')
+			if (u.role === 'curator') {
+				si.style.display = 'flex'
+				const ng = document.getElementById('n-group-row')
+				const ngt = document.getElementById('n-group-tag')
+				ng.style.display = 'block'
+				const g = DB.groups.find(x => x.id === u.groupId)
+				if (g) { ngt.value = g.tag }
+				const cur = document.getElementById('cur-group-info')
+				cur.style.display = 'block'
+				document.getElementById('curator-group-display').innerHTML = g ? `<div style="font-size:14px;font-weight:600">${g.name} <span class="group-tag">${g.tag}</span></div><div style="font-size:13px;color:var(--green);margin-top:4px">${g.spec} · ${g.year}</div>` : 'Группа не назначена'
+				document.getElementById('curator-group-sub').textContent = g ? `Группа ${g.name} (${g.tag})` : 'Группа не назначена'
+			} else { si.style.display = 'none' }
+			renderAllCabLists(u)
+		}
+
+		function saveProfile() {
+			const u = currentUser
+			u.name = document.getElementById('p-name').value
+			u.subject = document.getElementById('p-subject').value
+			u.username = document.getElementById('p-username').value
+			u.exp = document.getElementById('p-exp').value
+			u.degree = document.getElementById('p-degree').value
+			u.contact = document.getElementById('p-contact').value
+			u.bio = document.getElementById('p-bio').value
+			document.getElementById('cab-uname').textContent = u.name
+			document.getElementById('cab-av').textContent = initials(u.name)
+			showToast('Профиль сохранён')
+		}
+
+		function switchCab(sec) {
+			document.querySelectorAll('.cab-section').forEach(s => s.classList.remove('active'))
+			document.querySelectorAll('#cab-sidebar .sidebar-item').forEach(s => s.classList.remove('active'))
+			document.getElementById('cab-' + sec).classList.add('active')
+			event.currentTarget.classList.add('active')
+		}
+
+		function addPost(cat) {
+			const u = currentUser
+			const title = document.getElementById('n-title').value.trim()
+			if (!title) { showToast('Введите заголовок'); return }
+			const g = u.groupId ? DB.groups.find(x => x.id === u.groupId) : null
+			const post = {
+				title, subtitle: document.getElementById('n-subtitle').value.trim(),
+				body: document.getElementById('n-body').value.trim(),
+				date: today(), groupTag: g ? g.tag : null
+			}
+			u.posts.news.unshift(post)
+			document.getElementById('n-title').value = ''
+			document.getElementById('n-subtitle').value = ''
+			document.getElementById('n-body').value = ''
+			renderCabList('news', u)
+			showToast('Новость опубликована')
+		}
+
+		function addSectionItem(cat) {
+			const u = currentUser
+			let item = {}
+			if (cat === 'achievement') item = { student: v('a-student'), group: v('a-group'), name: v('a-name'), org: v('a-org'), desc: v('a-desc'), date: today() }
+			else if (cat === 'cert') item = { owner: v('c-owner'), name: v('c-name'), org: v('c-org'), date: v('c-date'), desc: v('c-desc') }
+			else if (cat === 'research') item = { title: v('r-title'), type: sv('r-type'), year: v('r-year'), org: v('r-org'), desc: v('r-desc'), date: today() }
+			else if (cat === 'manual') item = { title: v('m-title'), subject: v('m-subject'), year: v('m-year'), desc: v('m-desc'), date: today() }
+			else if (cat === 'coursework') item = { student: v('cw-student'), group: v('cw-group'), title: v('cw-title'), grade: sv('cw-grade'), year: v('cw-year'), desc: v('cw-desc'), date: today() }
+			else if (cat === 'mobility') item = { title: v('mob-title'), type: sv('mob-type'), place: v('mob-place'), from: v('mob-from'), to: v('mob-to'), desc: v('mob-desc'), date: today() }
+			else if (cat === 'curator') item = { title: v('cur-title'), type: sv('cur-type'), date: v('cur-date'), desc: v('cur-desc') }
+			else if (cat === 'workload') item = { subj: v('wl-subj'), group: v('wl-group'), lec: v('wl-lec'), prac: v('wl-prac'), sem: sv('wl-sem'), year: v('wl-year') }
+			else if (cat === 'info') item = { section: v('inf-section'), body: v('inf-body'), year: v('inf-year') }
+			const req = { achievement: 'a-student', cert: 'c-name', research: 'r-title', manual: 'm-title', coursework: 'cw-title', mobility: 'mob-title', curator: 'cur-title', workload: 'wl-subj', info: 'inf-section' }
+			if (!document.getElementById(req[cat]).value.trim()) { showToast('Заполните обязательные поля'); return }
+			u.posts[cat].unshift(item)
+			// clear inputs
+			document.querySelectorAll('#cab-' + cat + ' input, #cab-' + cat + ' textarea').forEach(el => { if (el.type !== 'month' && el.type !== 'date') el.value = '' })
+			renderCabList(cat, u)
+			showToast('Запись добавлена')
+		}
+
+		function v(id) { return document.getElementById(id) ? document.getElementById(id).value.trim() : '' }
+		function sv(id) { const el = document.getElementById(id); return el ? el.value : '' }
+
+		function renderAllCabLists(u) {
+			Object.keys(u.posts).forEach(cat => renderCabList(cat, u))
+		}
+
+		function renderCabList(cat, u) {
+			const el = document.getElementById('list-' + cat)
+			if (!el) return
+			const items = u.posts[cat]
+			if (!items.length) { el.innerHTML = '<div class="empty-state">Нет записей</div>'; return }
+			if (cat === 'news') el.innerHTML = items.map((it, i) => cabNewsItem(it, i, cat)).join('')
+			else if (cat === 'achievement') el.innerHTML = items.map((it, i) => `
+    <div class="item-card" style="position:relative">
+      <button onclick="delItem('${cat}',${i})" style="position:absolute;top:10px;right:10px;background:none;border:none;color:var(--text3);font-size:14px;cursor:pointer">✕</button>
+      <div class="item-card-title">${it.name}</div>
+      <div class="item-card-sub">👤 ${it.student} · ${it.group} · ${it.org}</div>
+      ${it.desc ? `<div class="item-card-body">${it.desc}</div>` : ''}</div>`).join('')
+			else if (cat === 'cert') el.innerHTML = items.map((it, i) => `
+    <div class="item-card" style="position:relative;display:flex;align-items:center;gap:14px">
+      <button onclick="delItem('${cat}',${i})" style="position:absolute;top:10px;right:10px;background:none;border:none;color:var(--text3);font-size:14px;cursor:pointer">✕</button>
+      <div style="font-size:26px">📜</div>
+      <div><div class="item-card-title">${it.name}</div>
+      <div class="item-card-sub">👤 ${it.owner} · ${it.org} · ${it.date}</div></div></div>`).join('')
+			else if (cat === 'research') el.innerHTML = items.map((it, i) => `
+    <div class="item-card" style="position:relative">
+      <button onclick="delItem('${cat}',${i})" style="position:absolute;top:10px;right:10px;background:none;border:none;color:var(--text3);font-size:14px;cursor:pointer">✕</button>
+      <div class="item-card-title">${it.title} <span class="badge" style="background:var(--purple-bg);color:var(--purple)">${it.type}</span></div>
+      <div class="item-card-sub">${it.org} · ${it.year}</div>
+      ${it.desc ? `<div class="item-card-body">${it.desc}</div>` : ''}</div>`).join('')
+			else if (cat === 'manual') el.innerHTML = items.map((it, i) => `
+    <div class="item-card" style="position:relative">
+      <button onclick="delItem('${cat}',${i})" style="position:absolute;top:10px;right:10px;background:none;border:none;color:var(--text3);font-size:14px;cursor:pointer">✕</button>
+      <div class="item-card-title">📖 ${it.title}</div>
+      <div class="item-card-sub">${it.subject} · ${it.year}</div>
+      ${it.desc ? `<div class="item-card-body">${it.desc}</div>` : ''}</div>`).join('')
+			else if (cat === 'coursework') el.innerHTML = items.map((it, i) => `
+    <div class="item-card" style="position:relative">
+      <button onclick="delItem('${cat}',${i})" style="position:absolute;top:10px;right:10px;background:none;border:none;color:var(--text3);font-size:14px;cursor:pointer">✕</button>
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px">
+      <div class="item-card-title">${it.title}</div>
+      <span class="grade-badge g-${it.grade === 'Отлично' ? 'excellent' : it.grade === 'Хорошо' ? 'good' : 'ok'}">${it.grade}</span></div>
+      <div class="item-card-sub">👤 ${it.student} · ${it.group} · ${it.year}</div>
+      ${it.desc ? `<div class="item-card-body">${it.desc}</div>` : ''}</div>`).join('')
+			else if (cat === 'mobility') el.innerHTML = items.map((it, i) => `
+    <div class="item-card" style="position:relative">
+      <button onclick="delItem('${cat}',${i})" style="position:absolute;top:10px;right:10px;background:none;border:none;color:var(--text3);font-size:14px;cursor:pointer">✕</button>
+      <div class="item-card-title">✈️ ${it.title}</div>
+      <div class="item-card-sub">${it.type} · ${it.place} · ${it.from} → ${it.to}</div>
+      ${it.desc ? `<div class="item-card-body">${it.desc}</div>` : ''}</div>`).join('')
+			else if (cat === 'curator') el.innerHTML = items.map((it, i) => `
+    <div class="item-card" style="position:relative">
+      <button onclick="delItem('${cat}',${i})" style="position:absolute;top:10px;right:10px;background:none;border:none;color:var(--text3);font-size:14px;cursor:pointer">✕</button>
+      <div class="item-card-title">${it.title}</div>
+      <div class="item-card-sub">${it.type} · ${it.date}</div>
+      ${it.desc ? `<div class="item-card-body">${it.desc}</div>` : ''}</div>`).join('')
+			else if (cat === 'workload') el.innerHTML = `<div class="table-wrap"><table>
+    <tr><th>Дисциплина</th><th>Группа</th><th>Лекции</th><th>Практика</th><th>Семестр</th><th>Год</th><th></th></tr>
+    ${items.map((it, i) => `<tr><td>${it.subj}</td><td>${it.group}</td><td>${it.lec}</td><td>${it.prac}</td><td>${it.sem}</td><td>${it.year}</td><td><button onclick="delItem('workload',${i})" class="btn-sm btn-danger">Удалить</button></td></tr>`).join('')}
+    </table></div>`
+			else if (cat === 'info') el.innerHTML = items.map((it, i) => `
+    <div class="item-card" style="position:relative">
+      <button onclick="delItem('${cat}',${i})" style="position:absolute;top:10px;right:10px;background:none;border:none;color:var(--text3);font-size:14px;cursor:pointer">✕</button>
+      <div class="item-card-title">${it.section} ${it.year ? '· ' + it.year : ''}</div>
+      <div class="item-card-body">${it.body}</div></div>`).join('')
+		}
+
+		function cabNewsItem(it, i, cat) {
+			return `<div class="item-card" style="position:relative">
+    <button onclick="delItem('${cat}',${i})" style="position:absolute;top:10px;right:10px;background:none;border:none;color:var(--text3);font-size:14px;cursor:pointer">✕</button>
+    <div style="font-size:11px;color:var(--text3);margin-bottom:4px">${it.date || today()} ${it.groupTag ? `<span class="group-tag" style="font-size:11px;padding:1px 7px">${it.groupTag}</span>` : ''}</div>
+    <div class="item-card-title">${it.title}</div>
+    ${it.subtitle ? `<div class="item-card-sub">${it.subtitle}</div>` : ''}
+    <div class="item-card-body">${it.body}</div></div>`
+		}
+
+		function delItem(cat, idx) {
+			currentUser.posts[cat].splice(idx, 1)
+			renderCabList(cat, currentUser)
+			showToast('Удалено')
+		}
+
+		/* ===================== ADMIN ===================== */
+		function renderAdmin() {
+			switchAdmin('dashboard')
+			// Dashboard stats
+			const posts = allPosts()
+			document.getElementById('adm-stats').innerHTML = `
+    <div class="stat-card"><div class="stat-num">${DB.users.length}</div><div class="stat-label">Преподавателей</div></div>
+    <div class="stat-card"><div class="stat-num">${DB.groups.length}</div><div class="stat-label">Групп</div></div>
+    <div class="stat-card"><div class="stat-num">${posts.length}</div><div class="stat-label">Публикаций</div></div>
+    <div class="stat-card"><div class="stat-num">${DB.users.filter(u => u.role === 'curator').length}</div><div class="stat-label">Кураторов</div></div>
+  `
+			// Recent users
+			document.getElementById('adm-recent-users').innerHTML = DB.users.map(u => `
+    <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border2)">
+      <div class="avatar av-blue" style="width:32px;height:32px;font-size:12px">${initials(u.name)}</div>
+      <div><div style="font-size:13px;font-weight:500">${u.name}</div>
+      <span class="role-tag ${ROLE_CLASS[u.role]}">${ROLE_LABEL[u.role]}</span></div>
+      <div style="margin-left:auto;font-size:11px;color:var(--text3)">@${u.login}</div>
+    </div>`).join('')
+			// Section activity
+			document.getElementById('adm-section-activity').innerHTML = Object.entries(CAT_LABELS).map(([k, v]) => {
+				const cnt = DB.users.reduce((a, u) => a + (u.posts[k] || []).length, 0)
+				const pct = posts.length ? Math.round(cnt / posts.length * 100) : 0
+				return `<div style="margin-bottom:10px">
+      <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:3px">
+        <span>${CAT_ICON[k]} ${v}</span><span style="color:var(--text3)">${cnt}</span>
+      </div>
+      <div style="height:5px;background:var(--surface2);border-radius:3px">
+        <div style="height:5px;background:var(--accent);border-radius:3px;width:${pct}%"></div>
+      </div></div>`
+			}).join('')
+			renderAdminUsers()
+			renderAdminGroups()
+			renderAdminFeed()
+			renderAdminSections()
+			populateCuratorSelect()
+		}
+
+		function switchAdmin(sec) {
+			document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'))
+			document.querySelectorAll('.admin-nav .sidebar-item').forEach(s => s.classList.remove('active'))
+			document.getElementById('adm-' + sec).classList.add('active')
+			event.currentTarget.classList.add('active')
+		}
+
+		function renderAdminUsers() {
+			const list = document.getElementById('adm-users-list')
+			list.innerHTML = DB.users.map(u => `
+    <div class="card card-pad" style="margin-bottom:8px;cursor:pointer" onclick="selectAdminUser(${u.id})">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div class="avatar av-blue" style="width:36px;height:36px;font-size:13px">${initials(u.name)}</div>
+        <div style="flex:1">
+          <div style="font-size:13px;font-weight:500">${u.name}</div>
+          <div style="font-size:11px;color:var(--text3)">@${u.login}</div>
+        </div>
+        <span class="role-tag ${ROLE_CLASS[u.role]}">${ROLE_LABEL[u.role]}</span>
+      </div>
+    </div>`).join('')
+		}
+
+		function filterAdminUsers() {
+			const q = document.getElementById('user-search').value.toLowerCase()
+			document.querySelectorAll('#adm-users-list .card').forEach((c, i) => {
+				const u = DB.users[i]
+				c.style.display = (u.name + u.login).toLowerCase().includes(q) ? '' : 'none'
+			})
+		}
+
+		function selectAdminUser(id) {
+			const u = DB.users.find(x => x.id === id)
+			const g = u.groupId ? DB.groups.find(x => x.id === u.groupId) : null
+			const totalPosts = Object.values(u.posts).reduce((a, b) => a + b.length, 0)
+			document.getElementById('adm-user-detail').innerHTML = `
+    <div class="card card-pad">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px;padding-bottom:20px;border-bottom:1px solid var(--border2)">
+        <div class="avatar av-blue" style="width:56px;height:56px;font-size:20px">${initials(u.name)}</div>
+        <div>
+          <div style="font-size:18px;font-weight:600">${u.name}</div>
+          <span class="role-tag ${ROLE_CLASS[u.role]}">${ROLE_LABEL[u.role]}</span>
+          ${g ? `<span class="group-tag" style="margin-left:6px">${g.tag}</span>` : ''}
+        </div>
+      </div>
+      <table style="width:100%;font-size:13px;margin-bottom:20px">
+        <tr><td style="color:var(--text3);padding:6px 0;width:130px">Логин</td><td><code style="background:var(--surface2);padding:2px 8px;border-radius:4px">${u.login}</code></td></tr>
+        <tr><td style="color:var(--text3);padding:6px 0">Пароль</td><td><code style="background:var(--surface2);padding:2px 8px;border-radius:4px">${u.password}</code></td></tr>
+        <tr><td style="color:var(--text3);padding:6px 0">Предмет</td><td>${u.subject}</td></tr>
+        <tr><td style="color:var(--text3);padding:6px 0">Стаж</td><td>${u.exp}</td></tr>
+        <tr><td style="color:var(--text3);padding:6px 0">Степень</td><td>${u.degree}</td></tr>
+        <tr><td style="color:var(--text3);padding:6px 0">Публикаций</td><td><strong style="color:var(--accent)">${totalPosts}</strong></td></tr>
+      </table>
+      <div style="margin-bottom:16px">
+        <div style="font-size:12px;font-weight:600;color:var(--text3);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Изменить роль</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn-sm ${u.role === 'teacher' ? 'active' : ''}" onclick="setRole(${u.id},'teacher')" style="${u.role === 'teacher' ? 'background:var(--accent-light);color:var(--accent);border-color:var(--accent)' : ''}">Преподаватель</button>
+          <button class="btn-sm ${u.role === 'curator' ? 'active' : ''}" onclick="setRole(${u.id},'curator')" style="${u.role === 'curator' ? 'background:var(--green-bg);color:var(--green);border-color:var(--green)' : ''}">Куратор</button>
+          <button class="btn-sm ${u.role === 'director' ? 'active' : ''}" onclick="setRole(${u.id},'director')" style="${u.role === 'director' ? 'background:#fff3e0;color:#e65100;border-color:#e65100' : ''}">Директор</button>
+        </div>
+      </div>
+      ${u.role === 'curator' ? `<div style="margin-bottom:16px"><div style="font-size:12px;font-weight:600;color:var(--text3);margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px">Группа куратора</div>
+        <select class="form-select" onchange="setCuratorGroup(${u.id},this.value)" style="max-width:200px">
+          <option value="">— Не назначена —</option>
+          ${DB.groups.map(g => `<option value="${g.id}" ${u.groupId === g.id ? 'selected' : ''}>${g.name}</option>`).join('')}
+        </select></div>`: ''}
+      <div style="display:flex;gap:8px">
+        <button class="btn-sm" onclick="openTeacher(${u.id})">👁 Просмотр</button>
+        <button class="btn-sm btn-danger" onclick="deleteUser(${u.id})">🗑 Удалить</button>
+      </div>
+    </div>`
+		}
+
+		function setRole(id, role) {
+			const u = DB.users.find(x => x.id === id)
+			u.role = role
+			if (role !== 'curator') u.groupId = null
+			selectAdminUser(id)
+			renderAdminUsers()
+			showToast('Роль изменена на: ' + ROLE_LABEL[role])
+		}
+
+		function setCuratorGroup(uid, gid) {
+			const u = DB.users.find(x => x.id === uid)
+			u.groupId = gid ? parseInt(gid) : null
+			showToast('Группа обновлена')
+		}
+
+		function deleteUser(id) {
+			DB.users = DB.users.filter(x => x.id !== id)
+			renderAdminUsers()
+			document.getElementById('adm-user-detail').innerHTML = '<div class="empty-state">← Выберите пользователя</div>'
+			renderAdmin()
+			showToast('Аккаунт удалён')
+		}
+
+		function renderAdminGroups() {
+			const gl = document.getElementById('adm-groups-list')
+			// Curator select
+			const gs = document.getElementById('g-curator')
+			gs.innerHTML = '<option value="">— Не назначен —</option>' + DB.users.map(u => `<option value="${u.id}">${u.name}</option>`).join('')
+			gl.innerHTML = DB.groups.map(g => {
+				const cur = DB.users.find(u => u.id === g.curatorId)
+				return `<div class="group-card">
+      <div style="font-size:22px">🎓</div>
+      <div style="flex:1">
+        <div style="font-weight:600;font-size:14px">${g.name}</div>
+        <div style="font-size:12px;color:var(--text3)">${g.spec} · ${g.year}</div>
+        <div style="margin-top:4px">${cur ? `Куратор: <strong>${cur.name}</strong>` : '<span style="color:var(--text3)">Куратор не назначен</span>'}</div>
+      </div>
+      <span class="group-tag">${g.tag}</span>
+      <button class="btn-sm btn-danger" onclick="deleteGroup(${g.id})">🗑</button>
+    </div>`
+			}).join('')
+		}
+
+		function createGroup() {
+			const name = v('g-name'); const spec = v('g-spec'); const year = v('g-year'); const curId = v('g-curator')
+			if (!name) { showToast('Введите название группы'); return }
+			const tag = '@' + name.toLowerCase().replace(/[^a-zа-яё0-9]/gi, '-')
+			const newId = DB.groups.length ? Math.max(...DB.groups.map(g => g.id)) + 1 : 1
+			DB.groups.push({ id: newId, name, tag, spec, year, curatorId: curId ? parseInt(curId) : null })
+			document.getElementById('g-name').value = ''; document.getElementById('g-spec').value = ''; document.getElementById('g-year').value = ''
+			renderAdminGroups(); populateCuratorSelect(); renderHome()
+			showToast('Группа создана: ' + name)
+		}
+
+		function deleteGroup(id) {
+			DB.groups = DB.groups.filter(g => g.id !== id)
+			DB.users.forEach(u => { if (u.groupId === id) u.groupId = null })
+			renderAdminGroups(); renderHome(); showToast('Группа удалена')
+		}
+
+		function onRoleChange() {
+			const role = document.getElementById('nu-role').value
+			document.getElementById('nu-group-row').style.display = role === 'curator' ? 'block' : 'none'
+		}
+
+		function populateCuratorSelect() {
+			const sel = document.getElementById('nu-group')
+			sel.innerHTML = '<option value="">— Выберите группу —</option>' + DB.groups.map(g => `<option value="${g.id}">${g.name} (${g.tag})</option>`).join('')
+		}
+
+		function createUser() {
+			const name = v('nu-name'); const subject = v('nu-subject'); const login = v('nu-login'); const pass = v('nu-pass')
+			const role = sv('nu-role'); const groupId = v('nu-group')
+			if (!name || !login || !pass) { showToast('Заполните все обязательные поля'); return }
+			if (DB.users.find(u => u.login === login)) { showToast('Логин уже занят'); return }
+			const newId = DB.users.length ? Math.max(...DB.users.map(u => u.id)) + 1 : 1
+			const emptyPosts = { news: [], achievement: [], cert: [], research: [], manual: [], coursework: [], mobility: [], curator: [], workload: [], info: [] }
+			DB.users.push({ id: newId, login, password: pass, name, username: login, subject, role, exp: '—', degree: '—', contact: '', bio: '', groupId: groupId ? parseInt(groupId) : null, posts: emptyPosts });
+			['nu-name', 'nu-subject', 'nu-login', 'nu-pass'].forEach(id => document.getElementById(id).value = '')
+			renderAdminUsers(); renderHome()
+			showToast(`Аккаунт "${name}" создан! Логин: ${login}`)
+			switchAdmin('users')
+		}
+
+		function renderAdminFeed() {
+			const posts = allPosts()
+			document.getElementById('adm-feed-list').innerHTML = posts.map(p => `
+    <div class="post" style="margin-bottom:12px">
+      <div class="post-head">
+        <div class="post-av av-blue">${initials(p.user.name)}</div>
+        <div class="post-meta">
+          <div class="post-author">${p.user.name} <span class="post-role-badge ${ROLE_CLASS[p.user.role]}">${ROLE_LABEL[p.user.role]}</span></div>
+          <div class="post-username">@${p.user.username}</div>
+        </div>
+        <span class="post-cat-badge ${CAT_CLASS[p.cat]}" style="margin-left:auto">${CAT_ICON[p.cat]} ${CAT_LABELS[p.cat]}</span>
+      </div>
+      <div class="post-title">${p.title || p.section || p.subj || '—'}</div>
+      <div class="post-body" style="font-size:13px;color:var(--text2)">${(p.body || p.desc || '').substring(0, 120)}</div>
+    </div>`).join('')
+		}
+
+		function renderAdminSections() {
+			document.getElementById('adm-sections-grid').innerHTML = Object.entries(CAT_LABELS).map(([k, v]) => {
+				const all = DB.users.map(u => ({ user: u, items: u.posts[k] || [] })).filter(x => x.items.length)
+				const total = all.reduce((a, x) => a + x.items.length, 0)
+				return `<div class="stat-card">
+      <div style="font-size:24px;margin-bottom:6px">${CAT_ICON[k]}</div>
+      <div class="stat-num">${total}</div>
+      <div class="stat-label">${v}</div>
+      <div style="margin-top:10px;font-size:12px;color:var(--text3)">${all.map(x => `${x.user.name.split(' ')[0]}: ${x.items.length}`).join(' · ') || 'Нет данных'}</div>
+    </div>`
+			}).join('')
+		}
+
+		// Sync g-name to g-tag
+		document.getElementById('g-name').addEventListener('input', function () {
+			document.getElementById('g-tag').value = this.value ? '@' + this.value.toLowerCase().replace(/[^a-zа-яё0-9]/gi, '-') : ''
+		})
+
+		// INIT
+		renderHome();
+	</script>
+</body>
+
 </html>
